@@ -9,33 +9,37 @@
     border-right: 1px solid #eeeeee;
 }
 
-// Inline code
+// Inline code (subtle, non-breaking)
 code {
     color: #3451b2;
     background-color: #f0f4ff;
-    padding: 2px 5px;
-    border-radius: 4px;
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+    font-size: 0.9em;
     font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+    white-space: nowrap;
 }
 
-// Block code styling (pre)
-.highlighter-rouge,
+// Block code styling (specifically for code blocks)
+div.highlighter-rouge,
 pre.highlight {
     background-color: #f8f9ff;
     border: 1px solid #e1e4f3;
     border-left: 4px solid #3451b2;
     border-radius: 6px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0;
     padding: 1rem;
+    overflow-x: auto;
 
     code {
+        display: block; // Ensure block-level behavior for code in blocks
         background-color: transparent;
         color: #333333;
-        font-size: 1.05rem !important; // More visible code blocks
+        font-size: 1.05rem !important;
         line-height: 1.6;
         padding: 0;
+        white-space: pre; // Restore pre-wrap behavior for blocks
     }
 }
 
