@@ -48,13 +48,6 @@ The 5-phase workflow prevents this. Every piece of work — feature, bug fix, im
 1. Developer runs `/discuss` or starts a session with the Discuss agent
 2. Agent asks 5 focused questions:
    - What exactly are you building?
----
-layout: default
-parent: Learn Series
-title: "Part 02 — The 5-Phase Issue Workflow"
-description: "Discuss → Research → Plan → Execute → Verify. The structured workflow every developer follows."
-nav_order: 3
----
 
 # Learn: The 5-Phase Issue Workflow
 

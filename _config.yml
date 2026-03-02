@@ -1,4 +1,4 @@
-title: "GitHub Copilot Team Workflow — Learn Series"
+title: "Copilot Team Workflow"
 description: "A 9-part guide for software teams to use GitHub Copilot with structure, consistency, and discipline. Covers agents, instructions, the 5-phase workflow, API architecture, and team setup."
 remote_theme: just-the-docs/just-the-docs
 
@@ -25,3 +25,15 @@ footer_content: "Built with ❤️ by <a href=\"https://github.com/SriSatyaLokes
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
+
+# Exclude boilerplate and technical docs from the site build
+exclude:
+  - docs/
+  - LICENSE
+  - README.md
+  - .github/
+  - .vscode/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/

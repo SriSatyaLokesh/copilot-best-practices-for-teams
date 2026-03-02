@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "GitHub Copilot Team Workflow — Learn Series"
+title: Copilot Team Workflow
 nav_order: 1
 has_children: true
 description: "A complete guide for software teams to use GitHub Copilot with structure, consistency, and discipline."
