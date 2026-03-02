@@ -1,0 +1,27 @@
+title: "GitHub Copilot Team Workflow — Learn Series"
+description: "A 9-part guide for software teams to use GitHub Copilot with structure, consistency, and discipline. Covers agents, instructions, the 5-phase workflow, API architecture, and team setup."
+remote_theme: just-the-docs/just-the-docs
+
+url: "https://srisatyalokesh.github.io"
+baseurl: "/copilot-best-practices-for-teams"
+
+# Navigation
+nav_sort: order
+search_enabled: true
+
+# Colour scheme
+color_scheme: dark
+
+# GitHub repo link in header
+aux_links:
+  "GitHub Repo":
+    - "https://github.com/SriSatyaLokesh/copilot-best-practices-for-teams"
+
+aux_links_new_tab: true
+
+# Footer
+footer_content: "Built with ❤️ by <a href=\"https://github.com/SriSatyaLokesh\">Satya K</a>."
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
