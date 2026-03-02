@@ -1,10 +1,11 @@
 // Just-the-Docs UI Variable Overrides
 $body-background-color: #ffffff;
 $body-text-color: #000000;
-$link-color: #ff5400;
-$nav-child-link-color: #ff5400;
+$link-color: #3451b2; // Premium Indigo
+$nav-child-link-color: #3451b2;
 
 // Typography upgrades for "more visible text"
-$base-font-size: 1.125rem; // 18px for better readability
+$base-font-size: 1.125rem;
+$code-font-size: 1rem; // Increased from default for better visibility
 $base-line-height: 1.7;
 $header-font-weight: 700;
