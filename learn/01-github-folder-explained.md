@@ -203,9 +203,12 @@ The `hooks.json` defines when each script runs:
 ```
 
 Available events:
-- `sessionStart` — runs when agent session opens
-- `sessionEnd` — runs when agent session closes
-- `userPromptSubmitted` — runs on every prompt
+
+| Event | When it fires |
+| :--- | :--- |
+| `sessionStart` | runs when agent session opens |
+| `sessionEnd` | runs when agent session closes |
+| `userPromptSubmitted` | runs on every prompt |
 
 ---
 
