@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: "Copilot Team Workflow"
-title: "Part 06 — Hooks and Automation"
+title: "Part 06 - Hooks and Automation"
 description: "Session auto-commit, session logger, and agent activity log — what runs automatically."
 nav_order: 7
 ---

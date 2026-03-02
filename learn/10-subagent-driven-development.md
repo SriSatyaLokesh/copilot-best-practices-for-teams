@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: "Copilot Team Workflow"
-title: "Part 10 — Subagent-Driven Development"
+title: "Part 10 - Subagent-Driven Development"
 description: "How to use specialized subagents for parallel tasks and automated quality reviews."
 nav_order: 11
 ---

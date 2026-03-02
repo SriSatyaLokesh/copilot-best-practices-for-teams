@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: "Copilot Team Workflow"
-title: "Part 07 — Team Lead Setup Guide"
+title: "Part 07 - Team Lead Setup Guide"
 description: "First-time setup (3-4 hours), customisation steps, ongoing maintenance, and scaling to more developers."
 nav_order: 8
 ---

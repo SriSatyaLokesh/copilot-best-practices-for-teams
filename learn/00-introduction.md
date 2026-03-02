@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: "Copilot Team Workflow"
-title: "Part 00 — Getting Started"
+title: "Part 00 - Getting Started"
 description: "Install GitHub Copilot, set up VS Code, enable customization, and install the boilerplate."
 nav_order: 1
 ---

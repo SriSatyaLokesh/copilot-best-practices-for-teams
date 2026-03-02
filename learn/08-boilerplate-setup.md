@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: "Copilot Team Workflow"
-title: "Part 08 — Using This Repo as a Boilerplate"
+title: "Part 08 - Using This Repo as a Boilerplate"
 description: "Install into any project with PowerShell or Bash, what to customise, and what works out of the box."
 nav_order: 9
 ---

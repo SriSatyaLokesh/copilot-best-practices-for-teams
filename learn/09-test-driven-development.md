@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: "Copilot Team Workflow"
-title: "Part 09 — Test-Driven Development (TDD)"
+title: "Part 09 - Test-Driven Development (TDD)"
 description: "How to follow the Red-Green-Refactor ritual and avoid common testing anti-patterns."
 nav_order: 10
 ---

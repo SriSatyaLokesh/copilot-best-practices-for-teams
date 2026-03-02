@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: "Copilot Team Workflow"
-title: "Part 04 — Documenting External APIs"
+title: "Part 04 - Documenting External APIs"
 description: "How to document external API field names so Copilot never guesses wrong field names at runtime."
 nav_order: 5
 ---

@@ -1,0 +1,37 @@
+// Custom CSS to avoid the "blank" look
+.site-header {
+    border-bottom: 2px solid #ff5400;
+    background-color: #fafafa;
+}
+
+.side-nav {
+    background-color: #ffffff;
+    border-right: 1px solid #eeeeee;
+}
+
+code {
+    color: #ff5400;
+    background-color: #fff5f0;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #ff5400;
+    border-color: #ff5400;
+
+    &:hover {
+        background-color: darken(#ff5400, 10%);
+    }
+}
+
+// Ensure the side nav text is also bolder and more visible
+.nav-list-link {
+    font-weight: 500;
+    color: #333333;
+
+    &.active {
+        color: #ff5400;
+        font-weight: 700;
+    }
+}

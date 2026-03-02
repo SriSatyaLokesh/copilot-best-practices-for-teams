@@ -1,7 +1,7 @@
 ---
 layout: default
 parent: "Copilot Team Workflow"
-title: "Part 05 — Daily Developer Workflow"
+title: "Part 05 - Daily Developer Workflow"
 description: "Start an issue, resume work, work on external APIs, and prepare a PR — the full day in practice."
 nav_order: 6
 ---
