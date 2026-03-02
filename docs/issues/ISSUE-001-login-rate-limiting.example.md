@@ -1,17 +1,17 @@
 ---
-issue-id: "ISSUE-001"
+issue-id: "issue-001"
 title: "User Login with Rate Limiting"
 status: "done"
-branch: "issue/ISSUE-001-login-rate-limiting"
+branch: "issue/issue-001-login-rate-limiting"
 created: "2026-03-01"
 completed: "2026-03-02"
 developer: "sri-lokesh"
 ---
 
-# ISSUE-001: User Login with Rate Limiting
+# issue-001: User Login with Rate Limiting
 
 > **This is an example Issue doc.** Copy `docs/templates/issue-template.md` to create your own.
-> Name your file: `ISSUE-XXX-short-name.md` where XXX is your issue number.
+> Name your file: `issue-XXX-short-name.md` where XXX is your issue number.
 
 ---
 
@@ -80,12 +80,12 @@ Window: 15 minutes. Max attempts: 5.
 - [x] `src/api/auth/route.test.ts` — 4 integration tests
 
 **Commits:**
-- `abc1234` — test: ISSUE-001 rate limit middleware unit tests
-- `def5678` — feat: ISSUE-001 rate limit middleware (red→green)
-- `ghi9012` — test: ISSUE-001 admin bypass unit tests
-- `jkl3456` — feat: ISSUE-001 admin bypass (red→green)
-- `mno7890` — test: ISSUE-001 login route integration tests
-- `pqr1234` — feat: ISSUE-001 apply rate limiting to login route
+- `abc1234` — test: issue-001 rate limit middleware unit tests
+- `def5678` — feat: issue-001 rate limit middleware (red→green)
+- `ghi9012` — test: issue-001 admin bypass unit tests
+- `jkl3456` — feat: issue-001 admin bypass (red→green)
+- `mno7890` — test: issue-001 login route integration tests
+- `pqr1234` — feat: issue-001 apply rate limiting to login route
 
 ---
 

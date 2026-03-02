@@ -1,17 +1,17 @@
 ---
-ISSUE-id: "ISSUE-XXX"
+issue-id: "issue-XXX"
 title: "[Short descriptive title]"
 type: "feature"  # feature | fix | story | task | improvement
 status: "discuss"  # discuss | research | plan | execute | verify | done
 owner: "[Developer Name]"
-branch: "issue/ISSUE-XXX-feature-name"
+branch: "issue/issue-XXX-feature-name"
 created: "YYYY-MM-DD"
 last-updated: "YYYY-MM-DD"
 related-flow: "[flow-name]-flow"  # e.g., auth-flow
 related-apis: []  # e.g., ["auth/login", "orders/create-order"]
 ---
 
-# ISSUE-XXX: [Short Title]
+# issue-XXX: [Short Title]
 
 ---
 
@@ -123,8 +123,8 @@ related-apis: []  # e.g., ["auth/login", "orders/create-order"]
 - [Any blockers or changes]
 
 ### Commits Made
-- `feat: ISSUE-XXX [description]` — [commit hash]
-- `test: ISSUE-XXX [description]` — [commit hash]
+- `feat: issue-xxx [description]` — [commit hash]
+- `test: issue-xxx [description]` — [commit hash]
 
 ---
 

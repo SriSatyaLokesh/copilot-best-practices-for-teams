@@ -34,7 +34,7 @@ Product: "We need to add rate limiting to the login endpoint"
 **Step 1**: Create a branch
 
 ```bash
-git checkout -b issue/ISSUE-042-login-rate-limiting
+git checkout -b issue/issue-042-login-rate-limiting
 ```
 
 **Step 2**: Open Copilot Chat. Select **"Discuss"** agent.
@@ -78,7 +78,7 @@ The Verify agent checks all requirements, tests, and docs. It gives you a pass/f
 The most important habit: **tell Copilot to read the Issue doc FIRST**.
 
 ```
-"Continue ISSUE-042. Read #docs/issues/ISSUE-042-login-rate-limiting.md first."
+"Continue issue-042. Read #docs/issues/issue-042-login-rate-limiting.md first."
 ```
 
 Copilot reads:
@@ -137,11 +137,11 @@ Copilot reads the git diff and updates `docs/apis/` for you.
 **Commit format**:
 
 ```
-ISSUE-042 feat: add rate limiting to login endpoint
+issue-042 feat: add rate limiting to login endpoint
 
 Updated:
 - docs/apis/auth/login.api.md (added 429 response, rate limit rules)
-- docs/issues/ISSUE-042-login-rate-limiting.md (Phase 4 progress)
+- docs/issues/issue-042-login-rate-limiting.md (Phase 4 progress)
 ```
 
 Code and docs in the **same commit**, always.
@@ -166,7 +166,7 @@ Before you create a PR, run the `/review` command. This dispatches a specialized
 
 1. Run `/verify` — get the verification report
 2. Fix every ❌ item the Verify agent found
-3. Ask Copilot: **"Write a PR description for ISSUE-XXX from the Issue doc"** — paste the output into GitHub
+3. Ask Copilot: **"Write a PR description for issue-xxx from the issue doc"** — paste the output into GitHub
 4. Request a teammate to review
 
 The reviewer runs `/code-review` on the PR files for a systematic multi-dimension review.
@@ -178,12 +178,12 @@ The reviewer runs `/code-review` on the PR files for a systematic multi-dimensio
 **One Copilot session per Issue.** When you switch Issues, start a fresh chat session.
 
 ```
-# Finishing ISSUE-042
+# Finishing issue-042
 /verify → passed → open PR → done for now
 
-# Starting ISSUE-043
+# Starting issue-043
 [New Copilot Chat session]
-"Continue ISSUE-043. Read #docs/issues/ISSUE-043-export-orders.md first."
+"Continue issue-043. Read #docs/issues/issue-043-export-orders.md first."
 ```
 
 Mixing issues in one session causes context bleed — Copilot starts mixing requirements from different Issues.
@@ -195,7 +195,7 @@ Mixing issues in one session causes context bleed — Copilot starts mixing requ
 | Situation | Command |
 |-----------|---------|
 | Starting a new Issue | Select Discuss agent → describe task |
-| Resuming an Issue | "Read #docs/issues/ISSUE-XXX.md first" |
+| Resuming an issue | "Read #docs/issues/issue-xxx.md first" |
 | Planning code | `/plan` |
 | Implementing | `/execute` |
 | Adding external API | `/add-new-api` |
@@ -244,7 +244,7 @@ End of day:
 ## Further Reading
 
 - [Git branching strategies](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow) — the branch-per-issue pattern this workflow uses
-- [Conventional Commits](https://www.conventionalcommits.org/) — the ``ISSUE-042 feat:`` commit format explained
+- [Conventional Commits](https://www.conventionalcommits.org/) — the ``issue-042 feat:`` commit format explained
 - [VS Code Copilot — Slash Commands](https://code.visualstudio.com/docs/copilot/copilot-chat#_slash-commands) — how prompt files become slash commands
 ---
 

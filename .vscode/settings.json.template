@@ -1,0 +1,12 @@
+{
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "chat.promptFilesLocations": [
+    ".github/prompts"
+  ],
+  "chat.instructionsFilesLocations": [
+    ".github/instructions"
+  ],
+  "github.copilot.selectedModel": "gpt-4o",
+  "github.copilot.editor.enableCodeActions": true,
+  "github.copilot.chat.trailingContext.enabled": true
+}

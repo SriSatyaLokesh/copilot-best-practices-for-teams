@@ -5,12 +5,12 @@ This folder contains **one document per work item** — feature, bug fix, improv
 ## Naming Convention
 
 ```
-ISSUE-001-login-rate-limiting.md
-ISSUE-002-order-export-to-csv.md
-ISSUE-003-fix-session-timeout.md
+- **issue-001-login-rate-limiting.md**
+- **issue-002-order-export-to-csv.md**
+- **issue-003-fix-session-timeout.md**
 ```
 
-- **ISSUE-XXX** — sequential number, zero-padded to 3 digits
+- **issue-xxx** — sequential number, zero-padded to 3 digits
 - **short-name** — kebab-case, 2-5 words max
 
 ## Lifecycle
@@ -24,7 +24,7 @@ discuss → research → plan → execute → verify → done
 ## How to Create a New Issue Doc
 
 ```bash
-cp docs/templates/issue-template.md docs/issues/ISSUE-XXX-your-feature.md
+cp docs/templates/issue-template.md docs/issues/issue-xxx-your-feature.md
 ```
 
 Then fill in:
@@ -34,4 +34,4 @@ Then fill in:
 
 ## Example
 
-See [`ISSUE-001-login-rate-limiting.example.md`](./ISSUE-001-login-rate-limiting.example.md) for a fully completed example showing all 5 phases.
+See [`issue-001-login-rate-limiting.example.md`](./issue-001-login-rate-limiting.example.md) for a fully completed example showing all 5 phases.

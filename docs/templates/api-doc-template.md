@@ -5,7 +5,7 @@ status: "stable"  # stable | beta | deprecated
 version: "v1"
 last-updated: "YYYY-MM-DD"
 related-flow: "[flow-name]-flow"
-related-Issue: "ISSUE-XXX"
+related-issue: "issue-XXX"
 owner: "[Team Name]"
 ---
 
@@ -194,5 +194,5 @@ Response:
 
 | Date | Change | Developer | Issue |
 |------|--------|-----------|-------|
-| YYYY-MM-DD | Initial implementation | [Name] | ISSUE-001 |
-| YYYY-MM-DD | [What changed] | [Name] | ISSUE-XXX |
+| YYYY-MM-DD | Initial implementation | [Name] | issue-001 |
+| YYYY-MM-DD | [What changed] | [Name] | issue-XXX |

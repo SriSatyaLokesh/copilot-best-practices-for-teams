@@ -27,11 +27,22 @@ docs/
 │
 ├── flows/                        ← User journeys (one per major flow)
 ├── apis/                         ← API documentation (one per endpoint)
-├── Issues/                       ← Work items / tasks (one per Issue)
-├── decisions/                    ← Architectural decisions (ADRs)
-├── team-notes/                   ← Developer notes (no merge conflicts)
+├── issues/                           ← One file per active issue (work item)
+│   ├── issue-001-user-auth.md        ← A completed issue (archived)
+│   ├── issue-042-login-rate-limiting.md ← Active issue
+│   └── issue-043-quotation-export.md ← Planned issue
+│
+├── decisions/                        ← Why we made certain choices
+│   ├── adr-001-jwt-over-sessions.md
+│   ├── adr-002-redis-for-caching.md
+│   └── adr-003-pagination-strategy.md
+│
+├── team-notes/                       ← Async team communication
+│   ├── [developer-name]/             ← Each dev has their own folder
+│   │   └── notes-issue-042.md
+│   │   └── notes-issue-043.md
 └── templates/                    ← Templates for docs
-    ├── ISSUE-template.md
+    ├── issue-template.md
     ├── api-doc-template.md
     └── flow-doc-template.md
 ```
@@ -120,28 +131,28 @@ Examples:
 
 ---
 
-## `docs/Issues/` — Work Items
+## `docs/issues/` — Work Items
 
 ### Who creates them?
-The developer assigned the Issue creates it at the start.
+The developer assigned the issue creates it at the start.
 
 ### Naming
-`ISSUE-[number]-[short-kebab-case-name].md`
+`issue-[number]-[short-kebab-case-name].md`
 
 Examples:
-- `ISSUE-001-user-authentication.md`
-- `ISSUE-042-login-rate-limiting.md`
-- `ISSUE-099-quotation-pdf-export.md`
+- `issue-001-user-authentication.md`
+- `issue-042-login-rate-limiting.md`
+- `issue-099-quotation-pdf-export.md`
 
 ### When does it go to archive?
-When the Issue is merged and verified, it stays in `Issues/` with `status: done`.
+When the issue is merged and verified, it stays in `issues/` with `status: done`.
 This is intentional — it's a permanent record of what was built and decided.
 
 ### Issue lifecycle in Git
 
-1. Created on feature branch: `issue/ISSUE-042-login-rate-limiting`
+1. Created on feature branch: `issue/issue-042-login-rate-limiting`
 2. Updated throughout all 5 phases on that branch
-3. Merged to main when Issue is complete
+3. Merged to main when issue is complete
 4. Never deleted — only `status` changes to `done`
 
 ---
@@ -184,8 +195,8 @@ Accepted
 ```
 docs/team-notes/
 ├── [developer-name]/
-│   ├── notes-ISSUE-042.md
-│   └── notes-ISSUE-043.md
+│   ├── notes-issue-042.md
+│   └── notes-issue-043.md
 └── shared/
     └── standup-template.md
 ```
@@ -226,10 +237,10 @@ Do this:
 
 Copilot will answer accurately based on YOUR system, not generic advice.
 
-**For long sessions:** Reference your Issue doc at the start of every session:
+**For long sessions:** Reference your issue doc at the start of every session:
 ```
-"I'm continuing work on ISSUE-042.
- Read #docs/Issues/ISSUE-042-login-rate-limiting.md before we start."
+"I'm continuing work on issue-042.
+ Read #docs/issues/issue-042-login-rate-limiting.md before we start."
 ```
 
 ---
@@ -241,7 +252,7 @@ Copilot will answer accurately based on YOUR system, not generic advice.
 Never commit a code change that changes API behavior without updating the API doc in the same commit. The commit message should say:
 
 ```
-feat: ISSUE-042 add rate limiting to login endpoint
+feat: issue-042 add rate limiting to login endpoint
 
 #docs/apis/auth/login.api.md updated:
 - Added rate limit error responses
@@ -266,7 +277,7 @@ Review the changes before committing.
 |-------------------|---------------|
 | The login endpoint | `docs/apis/auth/login.api.md` |
 | How order flow works | `docs/flows/order-flow.md` |
-| My current Issue | `docs/Issues/ISSUE-XXX-my-Issue.md` |
+| My current issue | `docs/issues/issue-xxx-my-issue.md` |
 | Team conventions | `docs/CONTRIBUTING.md` |
-| Why we use Redis | `docs/decisions/ADR-0XX-redis.md` |
+| Why we use Redis | `docs/decisions/adr-0xx-redis.md` |
 | What APIs are in auth flow | `docs/flows/auth-flow.md` → Related APIs section |

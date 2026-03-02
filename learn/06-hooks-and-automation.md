@@ -146,15 +146,15 @@ This is written by the agents themselves (using the `editFiles` tool), not by a 
 
 **Example entries**:
 ```json
-{"timestamp":"2026-03-02T16:00:00Z","issueId":"ISSUE-042","phase":"discuss","status":"complete","summary":"Agreed: rate limiting after 5 failures, 15-min window, admin exempt","decisions":["Window: 15 min","Admin role exempt","Per-email, not per-IP"]}
-{"timestamp":"2026-03-02T16:30:00Z","issueId":"ISSUE-042","phase":"plan","taskCount":"6","decisions":["Use existing Redis client from otp-rate-limit.ts"]}
-{"timestamp":"2026-03-02T17:15:00Z","issueId":"ISSUE-042","phase":"verify","testResults":{"unit":{"passed":12,"failed":0}},"requirementsMet":"3/3","verdict":"ready"}
+{"timestamp":"2026-03-02T16:00:00Z","issueId":"issue-042","phase":"discuss","status":"complete","summary":"Agreed: rate limiting after 5 failures, 15-min window, admin exempt","decisions":["Window: 15 min","Admin role exempt","Per-email, not per-IP"]}
+{"timestamp":"2026-03-02T16:30:00Z","issueId":"issue-042","phase":"plan","taskCount":"6","decisions":["Use existing Redis client from otp-rate-limit.ts"]}
+{"timestamp":"2026-03-02T17:15:00Z","issueId":"issue-042","phase":"verify","testResults":{"unit":{"passed":12,"failed":0}},"requirementsMet":"3/3","verdict":"ready"}
 ```
 
 **Querying the log**:
 ```bash
-# All phases for ISSUE-042
-grep "ISSUE-042" logs/copilot/agent-activity.log | jq .
+# All phases for issue-042
+grep "issue-042" logs/copilot/agent-activity.log | jq .
 
 # All issues with verdict "not-ready"
 cat logs/copilot/agent-activity.log | jq 'select(.verdict == "not-ready")'

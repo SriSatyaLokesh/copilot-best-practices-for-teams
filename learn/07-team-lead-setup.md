@@ -158,7 +158,7 @@ The most common problems and fixes:
 |---------|-------|-----|
 | Copilot not following architecture rules | Instructions not scoped to right files | Check `applyTo` glob in the instruction frontmatter |
 | Agent giving wrong field names | External API doc not filled in | Document the entity in `docs/external-apis/` |
-| Context lost between sessions | Developer not reading Issue doc | Make it a team habit: every session starts with "Read #docs/issues/..." |
+| Context lost between sessions | Developer not reading issue doc | Make it a team habit: every session starts with "Read #docs/issues/..." |
 | Sessions not auto-committing | Hook not installed or not on default branch | Check `.github/hooks/` is committed to main |
 
 ---
@@ -180,7 +180,7 @@ Tech leads own the system. Developers own the content.
 
 For a team of 5–10 developers working on 3–5 Issues simultaneously:
 
-1. **Branch naming**: `issue/ISSUE-XXX-kebab-name` — consistent and searchable
+1. **Branch naming**: `issue/issue-xxx-kebab-name` — consistent and searchable
 2. **Issue doc per developer**: own your Issue doc — don't edit others
 3. **Team notes folder**: `docs/team-notes/[your-name]/` — personal scratch space, no conflicts
 4. **External API docs**: team lead owns these — reviewed before wrapper code is written

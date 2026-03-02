@@ -86,10 +86,10 @@ Because your project is built from Issues. Each is small, well-defined, and fits
 ### Issue anatomy
 
 Every Issue has:
-- **A unique ID**: `ISSUE-001`, `ISSUE-042`
+- **A unique ID**: `issue-001`, `issue-042`
 - **A type**: `feature` | `fix` | `story` | `task` | `improvement`
 - **A status**: `discuss` → `research` → `plan` → `execute` → `verify` → `done`
-- **A doc file**: `docs/Issues/ISSUE-042-login-rate-limiting.md`
+- **A doc file**: `docs/issues/issue-042-login-rate-limiting.md`
 - **An owner**: The developer currently working on it
 
 ---
@@ -130,7 +130,7 @@ Copilot asks clarifying questions:
 
 At the end: A short summary of agreed requirements is saved to your Issue doc.
 
-**Copilot updates**: `docs/Issues/ISSUE-042-login-rate-limiting.md` → Phase: Discuss ✅
+**Copilot updates**: `docs/issues/issue-042-login-rate-limiting.md` → Phase: Discuss ✅
 
 ---
 
@@ -150,7 +150,7 @@ Copilot reads your codebase and answers:
 - "You already use Redis for session caching at `src/utils/redis.ts`"
 - "Similar rate limiting exists for OTP in `src/middleware/otp-rate-limit.ts` — we can follow this pattern"
 
-**Copilot updates**: `docs/Issues/ISSUE-042-login-rate-limiting.md` → Research notes added, Phase: Research ✅
+**Copilot updates**: `docs/issues/issue-042-login-rate-limiting.md` → Research notes added, Phase: Research ✅
 
 ---
 
@@ -162,7 +162,7 @@ You switch to the **Plan** agent:
 
 ```
 "Create an implementation plan for login rate limiting.
- Use the research notes from docs/Issues/ISSUE-042-login-rate-limiting.md"
+ Use the research notes from docs/issues/issue-042-login-rate-limiting.md"
 ```
 
 Copilot creates a structured plan:
@@ -174,7 +174,7 @@ Copilot creates a structured plan:
 
 You review the plan and approve it (or ask for changes).
 
-**Copilot updates**: `docs/Issues/ISSUE-042-login-rate-limiting.md` → Plan section complete, Phase: Plan ✅
+**Copilot updates**: `docs/issues/issue-042-login-rate-limiting.md` → Plan section complete, Phase: Plan ✅
 
 > **Rule**: No coding until the Plan is approved. This prevents wasted work.
 
@@ -187,7 +187,7 @@ You review the plan and approve it (or ask for changes).
 You switch to the **Execute** (TDD) agent:
 
 ```
-"Execute the plan in docs/Issues/ISSUE-042-login-rate-limiting.md"
+"Execute the plan in docs/issues/issue-042-login-rate-limiting.md"
 ```
 
 Copilot:
@@ -198,7 +198,7 @@ Copilot:
 5. Commits after each passing test cycle
 
 **Copilot updates**: 
-- `docs/Issues/ISSUE-042-login-rate-limiting.md` → Execution notes, progress tracker updated
+- `docs/issues/issue-042-login-rate-limiting.md` → Execution notes, progress tracker updated
 - `docs/apis/auth/login.api.md` → "Rate limiting" section added to the API doc
 
 ---
@@ -222,7 +222,7 @@ Copilot checks:
 
 It produces a verification report.
 
-**Copilot updates**: `docs/Issues/ISSUE-042-login-rate-limiting.md` → Verification report, Phase: Verify ✅, Status: Done
+**Copilot updates**: `docs/issues/issue-042-login-rate-limiting.md` → Verification report, Phase: Verify ✅, Status: Done
 
 ---
 
@@ -325,19 +325,19 @@ docs/
 │   │   └── track-order.api.md
 │   └── [add folders per domain]
 │
-├── Issues/                           ← One file per active Issue (work item)
-│   ├── ISSUE-001-user-auth.md        ← A completed Issue (archived)
-│   ├── ISSUE-042-login-rate-limiting.md  ← Active Issue
-│   └── ISSUE-043-quotation-export.md ← Planned Issue
+├── issues/                           ← One file per active issue (work item)
+│   ├── issue-001-user-auth.md        ← A completed issue (archived)
+│   ├── issue-042-login-rate-limiting.md  ← Active issue
+│   └── issue-043-quotation-export.md ← Planned issue
 │
 ├── decisions/                        ← Why we made certain choices
-│   ├── ADR-001-jwt-over-sessions.md
-│   ├── ADR-002-redis-for-caching.md
-│   └── ADR-003-pagination-strategy.md
+│   ├── adr-001-jwt-over-sessions.md
+│   ├── adr-002-redis-for-caching.md
+│   └── adr-003-pagination-strategy.md
 │
 └── team-notes/                       ← Async team communication
     ├── [developer-name]/             ← Each dev has their own folder
-    │   └── notes-ISSUE-042.md        ← No merge conflicts!
+    │   └── notes-issue-042.md        ← No merge conflicts!
     └── shared/
         └── standup-notes.md
 ```
@@ -515,8 +515,8 @@ Content-Type: application/json
 ## Change History
 | Date | Change | Developer | Issue |
 |------|--------|-----------|-------|
-| 2026-03-01 | Added rate limiting | John | ISSUE-042 |
-| 2026-02-20 | Initial endpoint | Sarah | ISSUE-001 |
+| 2026-03-01 | Added rate limiting | John | issue-042 |
+| 2026-02-20 | Initial endpoint | Sarah | issue-001 |
 ```
 
 ---
@@ -525,27 +525,27 @@ Content-Type: application/json
 
 ### Starting your day
 
-1. **Pull latest changes** from main: `git pull origin main`
-2. **Check your current Issue**: `docs/Issues/ISSUE-XXX-your-Issue.md`
-3. **Continue from where you left off** by telling Copilot:
-   ```
-   "I'm continuing work on ISSUE-042. 
-    Read docs/Issues/ISSUE-042-login-rate-limiting.md for context."
-   ```
+1.  **Pull latest changes** from main: `git pull origin main`
+2.  **Check your current issue**: `docs/issues/issue-xxx-your-issue.md`
+3.  **Continue from where you left off** by telling Copilot:
+    ```
+    "I'm continuing work on issue-042.
+     Read docs/issues/issue-042-login-rate-limiting.md for context."
+    ```
 
-### Starting a new Issue
+### Starting a new issue
 
-1. Create a new branch: `git checkout -b issue/ISSUE-043-feature-name`
-2. Create the Issue doc: `docs/Issues/ISSUE-043-feature-name.md`
-   - Use the template from `docs/templates/ISSUE-template.md`
+1. Create a new branch: `git checkout -b issue/issue-043-feature-name`
+2. Create the issue doc: `docs/issues/issue-043-feature-name.md`
+   - Use the template from `docs/templates/issue-template.md`
 3. Open Copilot Chat, select **Discuss** agent
-4. Start discussing the Issue requirements
+4. Start discussing the issue requirements
 5. Progress through Phase 1 → 2 → 3 → 4 → 5
 
 ### During execution
 
-Your chat session for a Issue should:
-- Start with: `"I'm working on ISSUE-042. Read #docs/Issues/ISSUE-042-login-rate-limiting.md"`
+Your chat session for an issue should:
+- Start with: `"I'm working on issue-042. Read #docs/issues/issue-042-login-rate-limiting.md"`
 - Reference specific API docs when working on endpoints: `#docs/apis/auth/login.api.md`
 - Reference flow docs for context: `#docs/flows/auth-flow.md`
 
@@ -555,12 +555,12 @@ Before you commit and stop, always ask Copilot:
 
 ```
 "Update all docs for what we completed today:
- 1. Update the Issue doc with today's progress and notes
+ 1. Update the issue doc with today's progress and notes
  2. Update any API docs we changed
  3. Summarize what's done and what's remaining"
 ```
 
-Copilot will update the docs. Commit everything together: `git commit -m "feat: ISSUE-042 rate limiting + docs update"`
+Copilot will update the docs. Commit everything together: `git commit -m "feat: issue-042 rate limiting + docs update"`
 
 ### Creating a PR
 
@@ -569,7 +569,7 @@ Copilot will update the docs. Commit everything together: `git commit -m "feat: 
 ```
 
 The PR description automatically includes:
-- What was built (from Issue doc)
+- What was built (from issue doc)
 - What APIs changed (from API docs)
 - How to test it (from Verify phase notes)
 
@@ -583,9 +583,9 @@ When two developers both update `docs/orders/order-flow.md`, a merge conflict ha
 
 ### Our solution: Team Notes + Feature Branches + Clear Ownership
 
-**Rule 1: One developer owns each Issue**
+**Rule 1: One developer owns each issue**
 
-Only one developer works on a Issue at a time. The Issue doc is their file.
+Only one developer works on an issue at a time. The issue doc is their file.
 
 **Rule 2: Personal notes in personal folders**
 
@@ -598,19 +598,19 @@ docs/team-notes/rahul/
 
 No one else touches your folder. No conflicts.
 
-**Rule 3: Feature branches for Issue docs**
+**Rule 3: Feature branches for issue docs**
 
-When you work on `ISSUE-042`, your branch is: `issue/ISSUE-042-login-rate-limiting`
+When you work on `issue-042`, your branch is: `issue/issue-042-login-rate-limiting`
 
-Your Issue doc `docs/Issues/ISSUE-042-login-rate-limiting.md` exists ONLY on your branch until you merge. No conflicts with other developers.
+Your issue doc `docs/issues/issue-042-login-rate-limiting.md` exists ONLY on your branch until you merge. No conflicts with other developers.
 
 **Rule 4: API docs update on merge**
 
-API docs (`docs/apis/`) are only updated when a Issue is DONE and merged to main. One update per PR. No mid-work conflicts.
+API docs (`docs/apis/`) are only updated when an issue is DONE and merged to main. One update per PR. No mid-work conflicts.
 
 **Rule 5: Flow docs are owned by the team lead**
 
-Each flow doc is reviewed and updated by the team lead when changes are merged. Developers don't directly edit flow docs — they note changes needed in their Issue doc.
+Each flow doc is reviewed and updated by the team lead when changes are merged. Developers don't directly edit flow docs — they note changes needed in their issue doc.
 
 ### Visual Example
 
@@ -618,21 +618,21 @@ Each flow doc is reviewed and updated by the team lead when changes are merged. 
 main branch:
   docs/apis/auth/login.api.md  ← Stable, reviewed version
 
-Developer 1 (branch: issue/ISSUE-042):
-  docs/Issues/ISSUE-042-login-rate-limiting.md  ← Their file, no conflicts
+Developer 1 (branch: issue/issue-042):
+  docs/issues/issue-042-login-rate-limiting.md  ← Their file, no conflicts
   docs/apis/auth/login.api.md  ← Updated on their branch, merged via PR
 
-Developer 2 (branch: issue/ISSUE-043):
-  docs/Issues/ISSUE-043-quotation-export.md  ← Their file, no conflicts
+Developer 2 (branch: issue/issue-043):
+  docs/issues/issue-043-quotation-export.md  ← Their file, no conflicts
   docs/apis/quotations/create-quotation.api.md  ← Different file, no conflicts
 ```
 
 ### Team notes for coordination
 
-When you want to let a teammate know something during a Issue:
+When you want to let a teammate know something during an issue:
 
 ```markdown
-# docs/team-notes/john/notes-ISSUE-042.md
+# docs/team-notes/john/notes-issue-042.md
 
 ## Day 1 Notes
 - Discovered: The existing OTP rate limiter in src/middleware/otp-rate-limit.ts
@@ -640,7 +640,7 @@ When you want to let a teammate know something during a Issue:
 - Question for Rahul: Does the admin bypass apply to the API or the UI level?
 - Blocked: Waiting for answer on admin bypass question
 
-## Day 2 Notes  
+## Day 2 Notes
 - Admin bypass → API level (confirmed by Rahul)
 - Rate limiting using sliding window, not fixed window (better for UX)
 ```
@@ -668,34 +668,34 @@ Your teammates read this during standup. No meetings needed.
 Select these from the agent dropdown in Copilot Chat:
 
 #### 🗣️ Discuss Agent
-- **Use when**: Starting a new Issue
+- **Use when**: Starting a new issue
 - **What it does**: Asks questions to define scope and requirements
-- **Output**: Requirements summary in your Issue doc
+- **Output**: Requirements summary in your issue doc
 - **Example prompt**: `"We want to add export to PDF for quotations"`
 
 #### 🔍 Research Agent
 - **Use when**: After discussing, before planning
 - **What it does**: Reads the codebase to find existing patterns, understand context
-- **Output**: Research notes in your Issue doc
+- **Output**: Research notes in your issue doc
 - **Example prompt**: `"Research where PDF export would fit in our quotation service"`
 
 #### 📋 Plan Agent
 - **Use when**: After research, before coding
 - **What it does**: Creates a detailed implementation plan
-- **Output**: Plan section in your Issue doc
-- **Example prompt**: `"Plan the PDF export using research from ISSUE-043"`
+- **Output**: Plan section in your issue doc
+- **Example prompt**: `"Plan the PDF export using research from issue-043"`
 
 #### 🔨 Execute (TDD) Agent
 - **Use when**: After plan is approved
 - **What it does**: Writes tests first, then implements, commits frequently
-- **Output**: Working code + tests + updated notes in Issue doc
-- **Example prompt**: `"Execute the plan in ISSUE-043"`
+- **Output**: Working code + tests + updated notes in issue doc
+- **Example prompt**: `"Execute the plan in issue-043"`
 
 #### ✅ Verify Agent
 - **Use when**: After execution, before PR
 - **What it does**: Checks completeness, tests, and docs alignment
-- **Output**: Verification report in Issue doc
-- **Example prompt**: `"Verify ISSUE-043 is complete and ready to merge"`
+- **Output**: Verification report in issue doc
+- **Example prompt**: `"Verify issue-043 is complete and ready to merge"`
 
 #### 🔎 Reviewer Agent
 - **Use when**: Reviewing a teammate's PR
@@ -780,7 +780,7 @@ If you're setting up Copilot for your project from scratch:
 ### Step 1: Create the docs structure (30 minutes)
 
 ```bash
-mkdir -p docs/{flows,apis,Issues,decisions,team-notes,templates}
+mkdir -p docs/{flows,apis,issues,decisions,team-notes,templates}
 ```
 
 Then:
@@ -813,7 +813,7 @@ This file tells Copilot about the project. It should reference your docs:
 ## Quick Reference
 - API docs: `docs/apis/[domain]/[endpoint].api.md`
 - Flow docs: `docs/flows/[flow-name]-flow.md`
-- Active Issues: `docs/Issues/ISSUE-XXX-name.md`
+- Active Issues: `docs/issues/issue-xxx-name.md`
 ```
 
 ### Step 4: Introduce the team
@@ -833,17 +833,17 @@ Pick one small feature. Everyone watches the team lead go through all 5 phases u
 
 ### Every morning checklist
 - [ ] `git pull origin main`
-- [ ] Open your Issue doc: `docs/Issues/ISSUE-XXX-name.md`
-- [ ] Tell Copilot: `"I'm continuing ISSUE-XXX. Read #docs/Issues/ISSUE-XXX-name.md"`
+- [ ] Open your issue doc: `docs/issues/issue-xxx-name.md`
+- [ ] Tell Copilot: `"I'm continuing issue-xxx. Read #docs/issues/issue-xxx-name.md"`
 
 ### Every evening checklist
 - [ ] Ask Copilot to update all docs for today's work
 - [ ] Commit everything: code + docs together
-- [ ] Update personal notes: `docs/team-notes/[your-name]/notes-ISSUE-XXX.md`
+- [ ] Update personal notes: `docs/team-notes/[your-name]/notes-issue-xxx.md`
 
 ### Starting a new Issue
-1. `git checkout -b issue/ISSUE-XXX-feature-name`
-2. Copy `docs/templates/ISSUE-template.md` → `docs/Issues/ISSUE-XXX-name.md`
+1. `git checkout -b issue/issue-xxx-feature-name`
+2. Copy `docs/templates/issue-template.md` → `docs/issues/issue-xxx-name.md`
 3. `/discuss` → `/research` → `/plan` → (get approval) → `/execute` → `/verify`
 
 ### Agent quick pick

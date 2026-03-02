@@ -83,7 +83,7 @@ flowchart TD
 
 ## Related Docs
 
-- Architecture context: [docs/ARCHITECTURE.md](../ARCHITECTURE.md)
+- Architecture context: [docs/ARCHITECTURE.md](../docs/ARCHITECTURE.md)
 - Decision log: [docs/decisions/ADR-XXX.md](../decisions/ADR-XXX.md)
 
 ---
@@ -92,5 +92,5 @@ flowchart TD
 
 | Date | Change | Developer | Issue |
 |------|--------|-----------|-------|
-| YYYY-MM-DD | Initial documentation | [Name] | ISSUE-001 |
-| YYYY-MM-DD | [What changed] | [Name] | ISSUE-XXX |
+| YYYY-MM-DD | Initial documentation | [Name] | issue-001 |
+| YYYY-MM-DD | [What changed] | [Name] | issue-XXX |

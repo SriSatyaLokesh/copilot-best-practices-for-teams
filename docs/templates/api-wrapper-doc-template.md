@@ -191,4 +191,4 @@ mockWrapper.getCustomer.mockResolvedValue({ id: '1', name: 'Test', isActive: tru
 
 | Date | Method | Change | Developer | Issue |
 |------|--------|--------|-----------|-------|
-| YYYY-MM-DD | `getCustomer` | Initial implementation | [Name] | ISSUE-001 |
+| YYYY-MM-DD | `getCustomer` | Initial implementation | [Name] | issue-001 |

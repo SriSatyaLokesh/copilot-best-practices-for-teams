@@ -24,7 +24,7 @@ A production-ready `.github/` configuration that turns GitHub Copilot into a str
 cd your-project
 
 # Clone the boilerplate
-git clone https://github.com/SriSatyaLokesh/copilot-best-practices-for-team.git copilot-boilerplate
+git clone https://github.com/SriSatyaLokesh/copilot-best-practices-for-teams.git copilot-boilerplate
 
 # Copy .github folder and docs structure (excludes learn/ — that stays in the boilerplate repo)
 Copy-Item -Recurse copilot-boilerplate\.github .\
@@ -56,7 +56,7 @@ git push
 cd your-project
 
 # Clone the boilerplate
-git clone https://github.com/SriSatyaLokesh/copilot-best-practices-for-team.git copilot-boilerplate
+git clone https://github.com/SriSatyaLokesh/copilot-best-practices-for-teams.git copilot-boilerplate
 
 # Copy .github folder and docs structure (excludes learn/ — that stays in the boilerplate repo)
 cp -r copilot-boilerplate/.github ./

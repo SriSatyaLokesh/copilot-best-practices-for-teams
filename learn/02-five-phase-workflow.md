@@ -48,13 +48,63 @@ The 5-phase workflow prevents this. Every piece of work — feature, bug fix, im
 1. Developer runs `/discuss` or starts a session with the Discuss agent
 2. Agent asks 5 focused questions:
    - What exactly are you building?
+---
+layout: default
+parent: Learn Series
+title: "Part 02 — The 5-Phase Issue Workflow"
+description: "Discuss → Research → Plan → Execute → Verify. The structured workflow every developer follows."
+nav_order: 3
+---
+
+# Learn: The 5-Phase Issue Workflow
+
+
+---
+
+## Why Phases?
+
+Most teams "just start coding" when they get a new task. The developer opens VS Code, asks Copilot to "add authentication", and gets code that:
+- Doesn't match the existing auth pattern
+- Doesn't account for the edge cases that were discussed in Slack
+- Works but nobody knows which requirements it was supposed to satisfy
+
+The 5-phase workflow prevents this. Every piece of work — feature, bug fix, improvement, task — goes through the same structured path.
+
+**The principle**: Copilot is only as good as the context you give it. The phases are how you build that context systematically.
+
+---
+
+## The 5 Phases
+
+```
+① DISCUSS   → Define WHAT before HOW
+      ↓ (auto-triggers)
+② RESEARCH  → Find WHERE before PLANNING
+      ↓
+③ PLAN      → Design HOW before CODING
+      ↓
+④ EXECUTE   → Code with TESTS first
+      ↓
+⑤ VERIFY    → Check before PR
+```
+
+---
+
+### Phase 1 — Discuss (`/discuss`)
+
+**Goal**: Write down requirements everyone agrees on, before anyone touches code.
+
+**What happens**:
+1. Developer runs `/discuss` or starts a session with the Discuss agent
+2. Agent asks 5 focused questions:
+   - What exactly are you building?
    - Why is this needed?
    - Who uses it?
    - What is explicitly OUT of scope?
    - Any constraints (performance, security, deadlines)?
 3. Agent summarizes: 3-5 requirements + 1-3 acceptance criteria
 4. Developer confirms
-5. Agent creates `docs/issues/ISSUE-042-feature-name.md` Phase 1 section
+5. Agent creates `docs/issues/issue-042-feature-name.md` Phase 1 section
 6. Automatically hands off to Research
 
 **Key principle**: Acceptance criteria must be **measurable**.
@@ -147,19 +197,23 @@ Window: 15 min (not 5 — confirmed with product team in Discuss phase).
 3. For each task:
    - Writes the test file first
    - Writes the implementation to make the test pass
-   - Commits: `ISSUE-042 test: rate limit middleware` then `ISSUE-042 feat: rate limit middleware`
+   - Commits: `issue-042 test: rate limit middleware` then `issue-042 feat: rate limit middleware`
    - Marks task `[x]` in Issue doc Phase 4 progress tracker
 4. Logs each commit to `logs/copilot/agent-activity.log`
 
 **Commit pattern**:
 ```
-ISSUE-042 test: rate limit middleware
-ISSUE-042 feat: rate limit middleware (red→green)
-ISSUE-042 test: admin bypass for rate limit
-ISSUE-042 feat: admin bypass (red→green)
+issue-042 test: rate limit middleware
+issue-042 feat: rate limit middleware (red→green)
+issue-042 test: admin bypass for rate limit
+issue-042 feat: admin bypass (red→green)
 ```
 
 **Why one commit per test cycle?** If a test regresses later, you can pin exact commits to where it broke.
+
+**Copilot updates**:
+- `docs/issues/issue-042-login-rate-limiting.md` → Execution notes, progress tracker updated
+- `docs/apis/auth/login.api.md` → "Rate limiting" section added to the API doc
 
 **Agent used**: `tdd.agent.md`
 **Output**: Working code, Phase 4 progress tracker updated
@@ -185,7 +239,7 @@ ISSUE-042 feat: admin bypass (red→green)
 
 **Example report**:
 ```markdown
-## Verification Report — ISSUE-042
+## Verification Report — issue-042
 
 Requirements: 3/3 ✅
   ✅ Rate limiting after 5 failures
@@ -209,18 +263,18 @@ Verdict: ✅ READY FOR PR
 Every Issue has ONE file tracking all 5 phases:
 
 ```
-docs/issues/ISSUE-042-login-rate-limiting.md
+docs/issues/issue-042-login-rate-limiting.md
 ```
 
 ```markdown
 ---
-issue-id: "ISSUE-042"
+issue-id: "issue-042"
 title: "Login Rate Limiting"
 status: "execute"          ← updates through: discuss → research → plan → execute → verify → done
-branch: "issue/ISSUE-042-login-rate-limiting"
+branch: "issue/issue-042-login-rate-limiting"
 ---
 
-# ISSUE-042: Login Rate Limiting
+# issue-042: Login Rate Limiting
 
 ## Phase 1: Discuss [x]
 Requirements agreed: ...
@@ -248,7 +302,7 @@ Task checklist: ...
 This is the most important habit: **always re-read the Issue doc** when resuming work.
 
 ```
-"Continue ISSUE-042. Read #docs/issues/ISSUE-042-login-rate-limiting.md first."
+"Continue issue-042. Read #docs/issues/issue-042-login-rate-limiting.md first."
 ```
 
 Copilot sees the full context: what was decided, what was researched, what the plan says, where execution left off. No repeated explanations.
@@ -274,7 +328,7 @@ Copilot sees the full context: what was decided, what was researched, what the p
 - [VS Code Copilot — Agents](https://code.visualstudio.com/docs/copilot/chat/chat-agents) — how agent handoffs and the `send: true` auto-trigger work
 - [Test-Driven Development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development) — the red→green→refactor cycle that Phase 4 is built on
 - [Conventional Commits](https://www.conventionalcommits.org/) — the `feat:`, `test:`, `docs:` commit format used in this workflow
-- Full example Issue doc: [ISSUE-001-login-rate-limiting.example.md](../docs/issues/ISSUE-001-login-rate-limiting.example.md)
+- Full example issue doc: [issue-001-login-rate-limiting.example.md](../docs/issues/issue-001-login-rate-limiting.example.md)
 ---
 
 [← Part 01: .github Folder Explained](./01-github-folder-explained.md) · 📚 [Learn Series](../index.md) · [Part 03: API Architecture →](./03-api-architecture.md)

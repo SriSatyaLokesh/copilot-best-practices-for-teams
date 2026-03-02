@@ -94,7 +94,7 @@ my-project/
 │   └── agents/                      # Same agents, Claude format
 ├── docs/
 │   ├── ARCHITECTURE.md
-│   ├── PRODUCT.md
+│   ├── PROJECT.md
 │   ├── CONTRIBUTING.md
 │   └── features/                    # Live feature plans
 │       ├── auth-plan.md
@@ -134,7 +134,7 @@ Use them for: coding standards, architectural decisions, environment context, te
 - **Architecture**: [e.g., Monorepo with shared packages]
 
 ## Key Documentation
-- [Product Vision](../docs/PRODUCT.md): What we're building and why
+- [Product Vision](../docs/PROJECT.md): What we're building and why
 - [System Architecture](../docs/ARCHITECTURE.md): How everything fits together
 - [Contributing Guidelines](../docs/CONTRIBUTING.md): Our team practices
 

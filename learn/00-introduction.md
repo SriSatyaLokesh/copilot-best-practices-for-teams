@@ -106,7 +106,7 @@ The `learn/` folder you're reading now stays in this boilerplate repo as a refer
 ### PowerShell (Windows)
 ```powershell
 cd your-project
-git clone https://github.com/SriSatyaLokesh/copilot-best-practices-for-team.git copilot-boilerplate
+git clone https://github.com/SriSatyaLokesh/copilot-best-practices-for-teams.git copilot-boilerplate
 Copy-Item -Recurse copilot-boilerplate\.github .\
 Get-ChildItem copilot-boilerplate\docs -Exclude 'learn' | Copy-Item -Destination .\docs -Recurse -Force
 New-Item -ItemType Directory -Force logs\copilot
@@ -120,7 +120,7 @@ git push
 ### Bash (Linux / macOS)
 ```bash
 cd your-project
-git clone https://github.com/SriSatyaLokesh/copilot-best-practices-for-team.git copilot-boilerplate
+git clone https://github.com/SriSatyaLokesh/copilot-best-practices-for-teams.git copilot-boilerplate
 cp -r copilot-boilerplate/.github ./
 rsync -av --exclude='learn/' copilot-boilerplate/docs/ ./docs/ 2>/dev/null || { cp -r copilot-boilerplate/docs ./ && rm -rf docs/learn; }
 mkdir -p logs/copilot

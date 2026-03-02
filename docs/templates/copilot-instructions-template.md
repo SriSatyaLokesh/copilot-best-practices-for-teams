@@ -27,7 +27,7 @@ Every work item is an **Issue** that goes through 5 phases via Copilot:
 ## Where to Find Things
 - **Flow docs**: `docs/flows/[flow-name]-flow.md`
 - **API docs**: `docs/apis/[domain]/[endpoint].api.md`
-- **Issue docs**: `docs/issues/ISSUE-XXX-name.md`
+- **Issue docs**: `docs/issues/issue-XXX-name.md`
 - **Templates**: `docs/templates/`
 
 ## For AI Agents Working in This Project

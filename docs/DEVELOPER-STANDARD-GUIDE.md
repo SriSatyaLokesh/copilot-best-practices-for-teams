@@ -88,7 +88,7 @@ Pull Request
 Every Issue has **one file** that tracks all 5 phases:
 
 ```
-docs/issues/ISSUE-042-login-rate-limiting.md
+docs/issues/issue-042-login-rate-limiting.md
 ```
 
 It starts empty (just Phase 1 section) and fills up as the Issue progresses.
@@ -96,7 +96,7 @@ This one file is your source of truth — not Jira, not Slack, this file.
 
 **Start every Copilot session with:**
 ```
-"Continue ISSUE-042. Read #docs/issues/ISSUE-042-login-rate-limiting.md first."
+"Continue issue-042. Read #docs/issues/issue-042-login-rate-limiting.md first."
 ```
 
 ---
@@ -150,9 +150,9 @@ docs/
 ├── RESEARCH-DECISIONS.md          ← Why we chose this approach
 │
 ├── external-apis/                 ← 🔑 KEY: Read BEFORE writing wrapper code
-│   ├── README.md                  ← Index of all external APIs
+│   ├── readme.md                  ← Index of all external APIs
 │   └── [api-name]/
-│       ├── README.md              ← Auth, base URL, rate limits, gotchas
+│       ├── readme.md              ← Auth, base URL, rate limits, gotchas
 │       └── [entity].api.md        ← Field names, query examples per entity
 │
 ├── apis/                          ← Our own internal API endpoints
@@ -165,10 +165,10 @@ docs/
 │   └── [flow-name]-flow.md        ← One per business flow
 │
 ├── issues/                        ← Active work items
-│   └── ISSUE-XXX-name.md          ← One per Issue, all 5 phases inside
+│   └── issue-xxx-name.md          ← One per Issue, all 5 phases inside
 │
 ├── decisions/                     ← Architecture Decision Records
-│   └── ADR-XXX-decision.md
+│   └── adr-xxx-decision.md
 │
 ├── team-notes/                    ← Personal notes per developer
 │   └── [your-name]/               ← Only YOU write here — no merge conflicts
@@ -189,7 +189,7 @@ Before starting any coding session, spend 10 seconds opening the right doc:
 |------------------------|----------------|
 | Adding an endpoint | `docs/apis/[domain]/[endpoint].api.md` |
 | Working on a wrapper | `docs/external-apis/[api-name]/[entity].api.md` |
-| Continuing an Issue | `docs/issues/ISSUE-XXX-name.md` |
+| Continuing an Issue | `docs/issues/issue-xxx-name.md` |
 | Understanding a flow | `docs/flows/[flow-name]-flow.md` |
 | Making an arch decision | `docs/decisions/` |
 
@@ -205,7 +205,7 @@ Before starting any coding session, spend 10 seconds opening the right doc:
 | **TDD** | Writing code (tests first, always) | `/execute` |
 | **Reviewer** | Code review before PR | `/code-review` |
 | **Verify** | Final check — all requirements met? | `/verify` |
-| **API Builder** | Adding new external API integrations | `/add-new-api` |
+| **ApiBuilder** | Adding new external API integrations | `/add-new-api` |
 
 > **Tip**: Start every new unit of work with the **Discuss** agent. It helps you define requirements and automatically triggers the research phase.
 
@@ -232,7 +232,7 @@ Before starting any coding session, spend 10 seconds opening the right doc:
 ### Starting a New Issue (Morning)
 
 ```
-1. Create branch: git checkout -b issue/ISSUE-042-login-rate-limiting
+1. Create branch: git checkout -b issue/issue-042-login-rate-limiting
 2. Open Copilot Chat → select "Discuss" agent
 3. Describe what you need to build
 4. /discuss → requirements defined → auto-research kicks in
@@ -245,7 +245,7 @@ Before starting any coding session, spend 10 seconds opening the right doc:
 
 ```
 1. Open Copilot Chat
-2. Say: "I'm continuing ISSUE-042. Read #docs/issues/ISSUE-042-login-rate-limiting.md"
+2. Say: "I'm continuing issue-042. Read #docs/issues/issue-042-login-rate-limiting.md"
 3. Check Phase 4 progress tracker — pick up from where you left off
 ```
 
@@ -311,7 +311,7 @@ If `docs/external-apis/[api-name]/[entity].api.md` doesn't exist:
 → "Which operation?" → get by ID
 ```
 
-### Step 3: API Builder agent creates (in order):
+### Step 3: ApiBuilder agent creates (in order):
 1. **Transformer** — external field → internal field mapping
 2. **Wrapper method** — HTTP call + error handling + calls transformer
 3. **Service method** — business logic
@@ -337,18 +337,18 @@ If `docs/external-apis/[api-name]/[entity].api.md` doesn't exist:
 git commit -m "feat: add rate limiting to login"
 
 # Good commit
-git commit -m "feat: ISSUE-042 add rate limiting to login
+git commit -m "feat: issue-042 add rate limiting to login
 
 Updated:
 - docs/apis/auth/login.api.md (added 429 error, rate limit rules)
-- docs/issues/ISSUE-042-login-rate-limiting.md (Phase 4 progress)"
+- docs/issues/issue-042-login-rate-limiting.md (Phase 4 progress)"
 ```
 
 ### Quick Template Guide
 
 | Situation | Template to copy | Save to |
 |-----------|-----------------|---------|
-| New Issue | `docs/templates/issue-template.md` | `docs/issues/ISSUE-XXX-name.md` |
+| New Issue | `docs/templates/issue-template.md` | `docs/issues/issue-xxx-name.md` |
 | New internal endpoint | `docs/templates/api-doc-template.md` | `docs/apis/[domain]/[endpoint].api.md` |
 | New external API entity | `docs/templates/external-api-doc-template.md` | `docs/external-apis/[name]/[entity].api.md` |
 | New wrapper class | `docs/templates/api-wrapper-doc-template.md` | `docs/apis/wrappers/[name]-wrapper.md` |
