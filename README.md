@@ -3,15 +3,15 @@
 A production-ready `.github/` configuration that turns GitHub Copilot into a structured, consistent AI development partner for your team.
 
 **What you get in ~3 hours of setup:**
-- 7 specialist agents (Discuss, Research, Planner, TDD, Reviewer, Verify, ApiBuilder)
-- 8 slash command prompts (`/discuss`, `/plan`, `/execute`, `/verify`, `/add-new-api`, `/code-review`, `/generate-api-doc`, `/update-api-doc`)
+- 8 specialist agents (Discuss, Research, Planner, TDD, Reviewer, Verify, ApiBuilder, ParallelBuilder)
+- 11 slash command prompts (`/start-issue`, `/discuss`, `/research`, `/plan`, `/execute`, `/verify`, `/debug`, `/add-new-api`, `/finish-branch`, `/generate-api-doc`, `/update-api-doc`)
 - Auto-loading instructions per file type (architecture rules, commenting standards, doc-on-change)
 - Playwright testing skills and instructions
 - Session hooks (auto-commit + structured activity log)
 - 9 documentation templates (Issue, API, flow, external-API)
 - A 11-part beginner-friendly learn series in `learn/` (at repo root — not copied on install)
 
-> **Learn more**: Start with [`learn/00-introduction.md`](./learn/00-introduction.md) or read it as a website: **[srisatyalokesh.github.io/copilot-best-practices-for-teams](https://srisatyalokesh.github.io/copilot-best-practices-for-teams)**
+> **Learn more**: Start with [`learn/00-introduction.md`](./learn/00-introduction.md) or read it as a website: **[srisatyalokesh.github.io/copilot-team-workflow](https://srisatyalokesh.github.io/copilot-team-workflow)**
 
 ---
 
@@ -24,7 +24,7 @@ A production-ready `.github/` configuration that turns GitHub Copilot into a str
 cd your-project
 
 # Clone the boilerplate
-git clone https://github.com/SriSatyaLokesh/copilot-best-practices-for-teams.git copilot-boilerplate
+git clone https://github.com/SriSatyaLokesh/copilot-team-workflow.git copilot-boilerplate
 
 # Copy .github folder and docs structure (excludes learn/ — that stays in the boilerplate repo)
 Copy-Item -Recurse copilot-boilerplate\.github .\
@@ -56,7 +56,7 @@ git push
 cd your-project
 
 # Clone the boilerplate
-git clone https://github.com/SriSatyaLokesh/copilot-best-practices-for-teams.git copilot-boilerplate
+git clone https://github.com/SriSatyaLokesh/copilot-team-workflow.git copilot-boilerplate
 
 # Copy .github folder and docs structure (excludes learn/ — that stays in the boilerplate repo)
 cp -r copilot-boilerplate/.github ./
@@ -147,17 +147,16 @@ Everything else works out of the box.
 │   ├── verify.agent.md                  ← Phase 5: done-check (argument-hint ✅)
 │   ├── api-builder.agent.md             ← External API integrations (argument-hint ✅)
 │   └── parallel-builder.agent.md        ← Orchestrator: dispatches independent tasks in parallel
-├── prompts/                             ← 12 slash commands
+├── prompts/                             ← 11 slash commands
 │   ├── start-issue.prompt.md            ← /start-issue (Entry point — always start here)
 │   ├── discuss.prompt.md                ← /discuss (branch gate enforced)
 │   ├── research.prompt.md               ← /research
-│   ├── plan.prompt.md                   ← /plan
 │   ├── execute.prompt.md                ← /execute
 │   ├── verify.prompt.md                 ← /verify
 │   ├── debug.prompt.md                  ← /debug
 │   ├── add-new-api.prompt.md            ← /add-new-api
-│   ├── code-review.prompt.md            ← /code-review
 │   ├── receive-review.prompt.md         ← /receive-review
+│   ├── finish-branch.prompt.md          ← /finish-branch (post-verify: merge/PR/discard)
 │   ├── generate-api-doc.prompt.md       ← /generate-api-doc
 │   └── update-api-doc.prompt.md         ← /update-api-doc
 ├── skills/                              ← 10 auto-loading knowledge packs

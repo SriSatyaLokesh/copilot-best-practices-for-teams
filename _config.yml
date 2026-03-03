@@ -3,7 +3,7 @@ description: "A 9-part guide for software teams to use GitHub Copilot with struc
 remote_theme: just-the-docs/just-the-docs
 
 url: "https://srisatyalokesh.github.io"
-baseurl: "/copilot-best-practices-for-teams"
+baseurl: "/copilot-team-workflow"
 
 # Navigation
 nav_sort: order
@@ -15,7 +15,7 @@ color_scheme: light
 # GitHub repo link in header
 aux_links:
   "GitHub Repo":
-    - "https://github.com/SriSatyaLokesh/copilot-best-practices-for-teams"
+    - "https://github.com/SriSatyaLokesh/copilot-team-workflow"
 
 aux_links_new_tab: true
 

@@ -55,7 +55,7 @@ By the end of this series you will have:
 
 - 📥 **[Installation →](./08-boilerplate-setup.md)** — copy this into your project in 5 minutes
 - 📖 **[Start Reading →](./00-introduction.md)** — begin at Part 00
-- 🌟 **[GitHub Repo →](https://github.com/SriSatyaLokesh/copilot-best-practices-for-teams)** — browse the code
+- 🌟 **[GitHub Repo →](https://github.com/SriSatyaLokesh/copilot-team-workflow)** — browse the code
 
 ---
 

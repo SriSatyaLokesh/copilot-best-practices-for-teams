@@ -31,7 +31,7 @@ Follow the install script in [Part 08 — Boilerplate Setup](./08-boilerplate-se
 
 ```bash
 # Navigate to your project
-git clone https://github.com/SriSatyaLokesh/copilot-best-practices-for-teams.git copilot-boilerplate
+git clone https://github.com/SriSatyaLokesh/copilot-team-workflow.git copilot-boilerplate
 cp -r copilot-boilerplate/.github ./
 cp -r copilot-boilerplate/docs ./
 rm -rf copilot-boilerplate

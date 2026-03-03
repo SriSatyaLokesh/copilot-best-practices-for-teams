@@ -101,12 +101,12 @@ By default, VS Code doesn't automatically load your `.github/instructions/` file
 
 The `learn/` folder you're reading now stays in this boilerplate repo as a reference guide. When you install into your project, only `.github/` and `docs/` (templates, examples) are copied — **`learn/` is excluded**. See [Part 08 — Boilerplate Setup](./08-boilerplate-setup.md) for full instructions, or use the quick install:
 
-**Browse as a website**: **[srisatyalokesh.github.io/copilot-best-practices-for-teams](https://srisatyalokesh.github.io/copilot-best-practices-for-teams)**
+**Browse as a website**: **[srisatyalokesh.github.io/copilot-team-workflow](https://srisatyalokesh.github.io/copilot-team-workflow)**
 
 ### PowerShell (Windows)
 ```powershell
 cd your-project
-git clone https://github.com/SriSatyaLokesh/copilot-best-practices-for-teams.git copilot-boilerplate
+git clone https://github.com/SriSatyaLokesh/copilot-team-workflow.git copilot-boilerplate
 Copy-Item -Recurse copilot-boilerplate\.github .\
 Get-ChildItem copilot-boilerplate\docs -Exclude 'learn' | Copy-Item -Destination .\docs -Recurse -Force
 New-Item -ItemType Directory -Force logs\copilot
@@ -120,7 +120,7 @@ git push
 ### Bash (Linux / macOS)
 ```bash
 cd your-project
-git clone https://github.com/SriSatyaLokesh/copilot-best-practices-for-teams.git copilot-boilerplate
+git clone https://github.com/SriSatyaLokesh/copilot-team-workflow.git copilot-boilerplate
 cp -r copilot-boilerplate/.github ./
 rsync -av --exclude='learn/' copilot-boilerplate/docs/ ./docs/ 2>/dev/null || { cp -r copilot-boilerplate/docs ./ && rm -rf docs/learn; }
 mkdir -p logs/copilot

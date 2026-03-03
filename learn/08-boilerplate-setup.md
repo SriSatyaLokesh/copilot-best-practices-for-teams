@@ -48,7 +48,7 @@ If this repo is public and configured as a GitHub template:
 cd your-project
 
 # Clone the boilerplate
-git clone https://github.com/SriSatyaLokesh/copilot-best-practices-for-teams.git copilot-boilerplate
+git clone https://github.com/SriSatyaLokesh/copilot-team-workflow.git copilot-boilerplate
 
 # Copy .github folder and docs structure (excludes learn/ — that's a boilerplate-only guide)
 Copy-Item -Recurse copilot-boilerplate\.github .\
@@ -76,7 +76,7 @@ git push
 cd your-project
 
 # Clone the boilerplate
-git clone https://github.com/SriSatyaLokesh/copilot-best-practices-for-teams.git copilot-boilerplate
+git clone https://github.com/SriSatyaLokesh/copilot-team-workflow.git copilot-boilerplate
 
 # Copy .github folder and docs structure (excludes learn/ — that's a boilerplate-only guide)
 cp -r copilot-boilerplate/.github ./
