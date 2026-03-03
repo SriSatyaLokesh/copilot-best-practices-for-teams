@@ -1,6 +1,6 @@
 ---
 name: documentation-writer
-description: 'Diátaxis Documentation Expert — creates high-quality software docs (tutorials, how-to guides, reference, explanation) guided by the Diátaxis framework'
+description: "Use when a developer needs to create or improve technical documentation — when they say 'write docs for', 'document this API', 'create a tutorial for', 'write a how-to guide', 'add a README', or 'explain this feature in docs'. Applies the Diátaxis framework to classify the document type (Tutorial / How-to / Reference / Explanation), asks clarifying questions about audience and goal, proposes an outline for approval before writing, then produces well-structured Markdown. Stores in the correct project folder (docs/issues/, docs/flows/, docs/apis/, docs/external-apis/). Matches existing project doc style. Auto-loads when documentation, README, API docs, tutorial, guide, or explanation writing is mentioned."
 ---
 
 # Diátaxis Documentation Expert

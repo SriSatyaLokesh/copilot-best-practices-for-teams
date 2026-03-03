@@ -1,6 +1,6 @@
 ---
 name: playwright-generate-test
-description: 'Generate a Playwright test based on a scenario using Playwright MCP'
+description: "Use when a developer wants to create a Playwright end-to-end or browser test for a specific feature, flow, or scenario — when they say 'write a Playwright test for', 'generate a test for the login flow', 'add e2e tests for', or 'test this UI with Playwright'. Uses Playwright MCP tools to first interact with the real browser (not just guess at selectors), then generates a TypeScript spec using @playwright/test. Saves to tests/ directory with <feature>.spec.ts naming. Iterates until the test passes. Auto-loads when Playwright, e2e, browser test, or UI test is mentioned."
 ---
 
 # Test Generation with Playwright MCP

@@ -1,6 +1,6 @@
 ---
 name: playwright-automation-fill-in-form
-description: 'Automate filling in a form using Playwright MCP'
+description: "Use when a developer needs to automate filling in a web form without submitting it — when they say 'fill in the form at URL', 'automate this form', 'enter these values in the web form', or 'test form input'. Uses Playwright MCP with accessible locators (getByLabel, getByRole, getByPlaceholder). Fills text with fill(), selects dropdowns with selectOption(), handles file uploads with setInputFiles(). ALWAYS stops before submitting — shows a filled-values summary and waits for human review. Auto-loads when form filling, web automation, input testing, or Playwright form interaction is mentioned."
 ---
 
 # Automating Filling in a Form with Playwright MCP

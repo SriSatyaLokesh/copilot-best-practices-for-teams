@@ -1,6 +1,6 @@
 ---
 name: receiving-code-review
-description: Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical rigor and verification, not performative agreement or blind implementation
+description: "Use when receiving code review feedback or PR review comments, before implementing or accepting any suggestions — especially if feedback seems unclear, technically questionable, or conflicts with prior decisions. Enforces technical rigor over performative agreement. Provides: a 6-step evaluate-before-implement pattern; forbidden responses ('You're absolutely right!'); YAGNI check (grep codebase before adding features); source-specific handling (partner vs external reviewer); pushback templates with technical reasoning; a correction pattern when your pushback was wrong; and implementation ordering by priority (blocking → simple → complex). Auto-loads when user mentions code review, PR feedback, reviewer comments, or 'reviewer said to'."
 ---
 
 # Code Review Reception

@@ -1,6 +1,6 @@
 ---
 name: subagent-driven-development
-description: Use when executing implementation plans with independent tasks in the current session
+description: "Use when executing an implementation plan with 2+ mostly-independent tasks in the current session — when a developer says 'execute this plan', 'implement these tasks', 'work through the plan', or when a written plan exists and coding is starting. Dispatches a fresh subagent per task to prevent context pollution, then runs two mandatory review stages per task: spec compliance (did code match requirements?) then code quality (is it well-written?). Includes implementer prompt, spec-reviewer prompt, and code-quality-reviewer prompt templates. Distinct from executing-plans (which uses parallel sessions): subagent-driven-development stays in the same session. Auto-loads when plan execution, task implementation, or sequential development work is mentioned."
 ---
 
 # Subagent-Driven Development

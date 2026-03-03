@@ -1,6 +1,6 @@
 ---
 name: requesting-code-review
-description: Use when completing tasks, implementing major features, or before merging to verify work meets requirements
+description: "Use when completing a task, implementing a major feature, or before merging — when a developer says 'review my code', 'check this before I merge', 'is this ready?', or after completing any task in a subagent-driven workflow. Dispatches a code-reviewer subagent with structured input (what was implemented, requirements, git SHAs). Provides a review template, severity tiers (Critical/Important/Minor), and instructions for acting on feedback. Mandatory after each task in subagent-driven development, after major features, and before any merge to main. Auto-loads when review, PR, merge, or code quality is mentioned."
 ---
 
 # Requesting Code Review

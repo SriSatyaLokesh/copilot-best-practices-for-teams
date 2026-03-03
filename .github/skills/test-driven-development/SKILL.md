@@ -1,6 +1,6 @@
 ---
 name: test-driven-development
-description: Use when implementing any feature or bugfix, before writing implementation code
+description: "Enforces Test-Driven Development discipline for all new features, bug fixes, refactoring, and behavior changes. Use before writing ANY implementation code — when a developer says 'implement this', 'write the code', 'add this function', 'fix this bug', or 'build this'. Provides the Red-Green-Refactor cycle with concrete TypeScript examples, an Iron Law (no production code without a failing test first), a rationalization rebuttal table to counter TDD excuses, a verification checklist, and STOP conditions for when code must be deleted and restarted. Auto-loads whenever implementation, coding, building, or feature development is mentioned."
 ---
 
 # Test-Driven Development (TDD)

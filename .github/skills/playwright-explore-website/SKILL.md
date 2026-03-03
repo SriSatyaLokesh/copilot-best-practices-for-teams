@@ -1,6 +1,6 @@
 ---
 name: playwright-explore-website
-description: 'Website exploration for testing using Playwright MCP'
+description: "Use when a developer wants to understand what to test on a website before writing tests — when they say 'explore the website', 'what should I test?', 'check what flows exist on this URL', 'analyze the UI for test coverage', or when given a URL and asked to plan browser tests. Uses Playwright MCP to navigate and interact with 3–5 core features, documents UI locators, user interactions, and expected outcomes, then proposes concrete test cases. Auto-loads when website exploration, test planning, UI review, or discovering testable flows is mentioned."
 ---
 
 # Website Exploration for Testing
