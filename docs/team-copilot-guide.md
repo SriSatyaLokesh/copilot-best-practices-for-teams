@@ -707,16 +707,21 @@ Select these from the agent dropdown in Copilot Chat:
 
 | Command | Select agent first? | Use when |
 |---------|-------------------|----------|
-| `/discuss` | No (has its own flow) | Starting a Issue |
-| `/research` | No | After discuss phase |
+| `/start-issue` | No | Starting any new work (creates branch) |
+| `/discuss` | No (auto-triggers from start-issue) | Defining requirements |
+| `/research` | No (auto-triggers after discuss) | Finding codebase patterns |
 | `/plan` | No | Creating implementation plan |
-| `/execute` | No | Implementing from plan |
-| `/verify` | No | Checking completeness |
+| `/execute` | No | TDD implementation |
+| `/verify` | No | Checking completeness before PR |
+| `/finish-branch` | No | Merge, create PR, or discard |
+| `/status` | No | Check current phase and next step |
+| `/debug` | No | Troubleshooting errors |
+| `/add-new-api` | No | Adding external API integration |
 | `/code-review` | No | Reviewing any file/PR |
-| `/write-tests` | No | Generating tests for open file |
-| `/update-api-doc` | No | After changing an API |
-| `/create-pr-description` | No | Before creating a PR |
-| `/fix-bug` | No | Debugging a bug |
+| `/receive-review` | No | Handling review feedback |
+| `/generate-api-doc` | No | Documenting new API endpoint |
+| `/update-api-doc` | No | Syncing doc after API changes |
+| `/sync-docs` | No | Bulk doc updates after refactoring |
 
 ---
 

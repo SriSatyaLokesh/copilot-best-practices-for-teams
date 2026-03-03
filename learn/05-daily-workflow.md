@@ -199,6 +199,7 @@ Mixing issues in one session causes context bleed — Copilot starts mixing requ
 |:---|:---|
 | Starting a new Issue | `/start-issue` (creates branch + baseline first) |
 | Resuming an issue | "Read #docs/issues/issue-xxx.md first" |
+| Check current progress | `/status` |
 | Planning code | `/plan` |
 | Implementing | `/execute` |
 | Adding external API | `/add-new-api` |
@@ -206,6 +207,7 @@ Mixing issues in one session causes context bleed — Copilot starts mixing requ
 | Before PR | `/verify` → `/finish-branch` |
 | Changed endpoint | `/update-api-doc` |
 | New endpoint | `/generate-api-doc` |
+| After refactoring | `/sync-docs` (bulk doc updates) |
 
 ---
 

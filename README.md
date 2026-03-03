@@ -4,7 +4,7 @@ A production-ready `.github/` configuration that turns GitHub Copilot into a str
 
 **What you get in ~3 hours of setup:**
 - 8 specialist agents (Discuss, Research, Planner, TDD, Reviewer, Verify, ApiBuilder, ParallelBuilder)
-- 11 slash command prompts (`/start-issue`, `/discuss`, `/research`, `/plan`, `/execute`, `/verify`, `/debug`, `/add-new-api`, `/finish-branch`, `/generate-api-doc`, `/update-api-doc`)
+- 14 slash command prompts (`/start-issue`, `/discuss`, `/research`, `/plan`, `/execute`, `/verify`, `/debug`, `/add-new-api`, `/finish-branch`, `/generate-api-doc`, `/update-api-doc`, `/receive-review`, `/status`, `/sync-docs`)
 - Auto-loading instructions per file type (architecture rules, commenting standards, doc-on-change)
 - Playwright testing skills and instructions
 - Session hooks (auto-commit + structured activity log)
@@ -94,12 +94,13 @@ After copying, enable Copilot customization features in your **workspace** `.vsc
   "chat.instructionsFilesLocations": [".github/instructions"],
   "chat.promptFilesRecommendations": {
     "start-issue": true,
+    "status": true,
     "debug": true
   }
 }
 ```
 
-> **`chat.promptFilesRecommendations`**: Surfaces `/start-issue` and `/debug` as suggested actions when opening a new chat session — ensures developers always start from the correct entry point.
+> **`chat.promptFilesRecommendations`**: Surfaces `/start-issue`, `/status`, and `/debug` as suggested actions when opening a new chat session — ensures developers always start from the correct entry point and can quickly check their progress.
 
 Then **reload VS Code** to pick up the agents, instructions, and prompts.
 
@@ -118,6 +119,8 @@ After installation, edit these 4 files for your project:
 | `.github/instructions/backend.instructions.md` | Your framework, ORM, validation library |
 | `.github/instructions/frontend.instructions.md` | Your frontend stack (React, Next.js, Vue, etc.) |
 | `.github/skills/acquire-codebase-knowledge/SKILL.md` | Initial codebase mapping questions and standards |
+
+> 📘 **Model Selection**: All agents and prompts come with optimized model assignments (GPT-4o, Claude Sonnet/Opus, Haiku). See [`docs/MODEL-SELECTION.md`](./docs/MODEL-SELECTION.md) for the rationale and how to customize.
 
 Everything else works out of the box.
 
@@ -148,18 +151,21 @@ Everything else works out of the box.
 │   ├── verify.agent.md                  ← Phase 5: done-check (argument-hint ✅)
 │   ├── api-builder.agent.md             ← External API integrations (argument-hint ✅)
 │   └── parallel-builder.agent.md        ← Orchestrator: dispatches independent tasks in parallel
-├── prompts/                             ← 11 slash commands
+├── prompts/                             ← 14 slash commands
 │   ├── start-issue.prompt.md            ← /start-issue (Entry point — always start here)
-│   ├── discuss.prompt.md                ← /discuss (branch gate enforced)
-│   ├── research.prompt.md               ← /research
-│   ├── execute.prompt.md                ← /execute
-│   ├── verify.prompt.md                 ← /verify
-│   ├── debug.prompt.md                  ← /debug
-│   ├── add-new-api.prompt.md            ← /add-new-api
-│   ├── receive-review.prompt.md         ← /receive-review
-│   ├── finish-branch.prompt.md          ← /finish-branch (post-verify: merge/PR/discard)
-│   ├── generate-api-doc.prompt.md       ← /generate-api-doc
-│   └── update-api-doc.prompt.md         ← /update-api-doc
+│   ├── discuss.prompt.md                ← /discuss (define requirements)
+│   ├── research.prompt.md               ← /research (find existing patterns)
+│   ├── plan.prompt.md                   ← /plan (create implementation tasks)
+│   ├── execute.prompt.md                ← /execute (TDD implementation)
+│   ├── verify.prompt.md                 ← /verify (check completeness)
+│   ├── debug.prompt.md                  ← /debug (troubleshooting)
+│   ├── add-new-api.prompt.md            ← /add-new-api (external API integration)
+│   ├── receive-review.prompt.md         ← /receive-review (handle feedback)
+│   ├── finish-branch.prompt.md          ← /finish-branch (merge/PR/discard)
+│   ├── generate-api-doc.prompt.md       ← /generate-api-doc (new API endpoint doc)
+│   ├── update-api-doc.prompt.md         ← /update-api-doc (sync existing doc)
+│   ├── status.prompt.md                 ← /status (check current phase)
+│   └── sync-docs.prompt.md              ← /sync-docs (bulk doc updates)
 ├── workflows/                           ← Specialist workflows
 │   └── acquire-codebase-knowledge.md    ← Factual codebase mapping procedure
 ├── skills/                              ← 11 auto-loading knowledge packs
@@ -180,6 +186,7 @@ Everything else works out of the box.
 
 learn/                               ← 10-part beginner guide (standalone, not copied on install)
 docs/
+├── MODEL-SELECTION.md                   ← Model assignment rationale (GPT-4o, Claude, Haiku)
 ├── templates/                           ← Copy-paste starters for every doc type
 ├── codebase/                            ← Factual codebase knowledge (Arch, Stack, etc.)
 ├── external-apis/                       ← Fill in: one folder per external API

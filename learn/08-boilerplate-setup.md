@@ -19,7 +19,7 @@ This repository is a **ready-to-use boilerplate** for setting up GitHub Copilot 
 
 - 8 pre-configured agents (Discuss, Research, Planner, TDD, Reviewer, Verify, ApiBuilder, ParallelBuilder)
 - 9 instruction files (developer guide, API architecture, backend, frontend, testing, Playwright, commenting, doc-sync, parallel-agents)
-- 11 prompt slash commands (/start-issue, /discuss, /research, /execute, /verify, /debug, /add-new-api, /receive-review, /finish-branch, /generate-api-doc, /update-api-doc)
+- 14 prompt slash commands (/start-issue, /discuss, /research, /plan, /execute, /verify, /debug, /add-new-api, /receive-review, /finish-branch, /generate-api-doc, /update-api-doc, /status, /sync-docs)
 - 2 automation hooks (session-auto-commit, session-logger)
 - 10 skills (TDD, subagent-driven-dev, Playwright × 3, code review × 2, doc-reviewer, documentation-writer, activity-logger)
 - 9 documentation templates (Issue, API doc, wrapper doc, external API, flow, ADR, architecture, project, copilot-instructions)
@@ -161,7 +161,7 @@ These files require **no changes** and work out of the box:
 | File | Why it works as-is |
 |:---|:---|
 | All 8 agents | Logic is generic, not project-specific |
-| All 11 prompts | Commands work for any project |
+| All 14 prompts | Commands work for any project |
 | Both hooks | Shell scripts are project-agnostic |
 | All 9 templates | Generic — fill in per use |
 | All 10 skills | Generic knowledge packs |
@@ -199,6 +199,7 @@ These files require **no changes** and work out of the box:
 │   ├── start-issue.prompt.md            ← works as-is (always start here)
 │   ├── discuss.prompt.md                ← works as-is
 │   ├── research.prompt.md               ← works as-is
+│   ├── plan.prompt.md                   ← works as-is
 │   ├── execute.prompt.md                ← works as-is
 │   ├── verify.prompt.md                 ← works as-is
 │   ├── debug.prompt.md                  ← works as-is
@@ -206,7 +207,9 @@ These files require **no changes** and work out of the box:
 │   ├── receive-review.prompt.md         ← works as-is
 │   ├── finish-branch.prompt.md          ← works as-is (post-verify)
 │   ├── generate-api-doc.prompt.md       ← works as-is
-│   └── update-api-doc.prompt.md         ← works as-is
+│   ├── update-api-doc.prompt.md         ← works as-is
+│   ├── status.prompt.md                 ← works as-is (check progress)
+│   └── sync-docs.prompt.md              ← works as-is (bulk doc updates)
 ├── skills/
 │   ├── agent-activity-logger/SKILL.md   ← works as-is
 │   ├── doc-reviewer/SKILL.md            ← works as-is

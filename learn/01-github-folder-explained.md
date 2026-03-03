@@ -130,14 +130,20 @@ Prompts are reusable, parameterized instructions your team runs as slash command
 
 ```
 .github/prompts/
+├── start-issue.prompt.md      ← /start-issue (always start here)
 ├── discuss.prompt.md          ← /discuss
+├── research.prompt.md         ← /research
 ├── plan.prompt.md             ← /plan
 ├── execute.prompt.md          ← /execute
 ├── verify.prompt.md           ← /verify
+├── debug.prompt.md            ← /debug
 ├── add-new-api.prompt.md      ← /add-new-api
-├── code-review.prompt.md      ← /code-review
+├── receive-review.prompt.md   ← /receive-review
+├── finish-branch.prompt.md    ← /finish-branch
 ├── generate-api-doc.prompt.md ← /generate-api-doc
-└── update-api-doc.prompt.md   ← /update-api-doc
+├── update-api-doc.prompt.md   ← /update-api-doc
+├── status.prompt.md           ← /status (check progress)
+└── sync-docs.prompt.md        ← /sync-docs (bulk doc updates)
 ```
 
 Example prompt file:
