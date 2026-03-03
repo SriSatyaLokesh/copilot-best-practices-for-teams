@@ -161,7 +161,7 @@ These files require **no changes** and work out of the box:
 | File | Why it works as-is |
 |:---|:---|
 | All 8 agents | Logic is generic, not project-specific |
-| All 14 prompts | Commands work for any project |
+| All 15 prompts | Commands work for any project |
 | Both hooks | Shell scripts are project-agnostic |
 | All 9 templates | Generic — fill in per use |
 | All 10 skills | Generic knowledge packs |
@@ -209,6 +209,7 @@ These files require **no changes** and work out of the box:
 │   ├── generate-api-doc.prompt.md       ← works as-is
 │   ├── update-api-doc.prompt.md         ← works as-is
 │   ├── status.prompt.md                 ← works as-is (check progress)
+│   ├── summarize.prompt.md              ← works as-is (save session context)
 │   └── sync-docs.prompt.md              ← works as-is (bulk doc updates)
 ├── skills/
 │   ├── agent-activity-logger/SKILL.md   ← works as-is

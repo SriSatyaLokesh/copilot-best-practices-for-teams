@@ -4,7 +4,7 @@ A production-ready `.github/` configuration that turns GitHub Copilot into a str
 
 **What you get in ~3 hours of setup:**
 - 8 specialist agents (Discuss, Research, Planner, TDD, Reviewer, Verify, ApiBuilder, ParallelBuilder)
-- 14 slash command prompts (`/start-issue`, `/discuss`, `/research`, `/plan`, `/execute`, `/verify`, `/debug`, `/add-new-api`, `/finish-branch`, `/generate-api-doc`, `/update-api-doc`, `/receive-review`, `/status`, `/sync-docs`)
+- 15 slash command prompts (`/start-issue`, `/discuss`, `/research`, `/plan`, `/execute`, `/verify`, `/debug`, `/add-new-api`, `/finish-branch`, `/generate-api-doc`, `/update-api-doc`, `/receive-review`, `/status`, `/sync-docs`, `/summarize`)
 - Auto-loading instructions per file type (architecture rules, commenting standards, doc-on-change)
 - Playwright testing skills and instructions
 - Session hooks (auto-commit + structured activity log)
@@ -151,7 +151,7 @@ Everything else works out of the box.
 │   ├── verify.agent.md                  ← Phase 5: done-check (argument-hint ✅)
 │   ├── api-builder.agent.md             ← External API integrations (argument-hint ✅)
 │   └── parallel-builder.agent.md        ← Orchestrator: dispatches independent tasks in parallel
-├── prompts/                             ← 14 slash commands
+├── prompts/                             ← 15 slash commands
 │   ├── start-issue.prompt.md            ← /start-issue (Entry point — always start here)
 │   ├── discuss.prompt.md                ← /discuss (define requirements)
 │   ├── research.prompt.md               ← /research (find existing patterns)
@@ -165,6 +165,7 @@ Everything else works out of the box.
 │   ├── generate-api-doc.prompt.md       ← /generate-api-doc (new API endpoint doc)
 │   ├── update-api-doc.prompt.md         ← /update-api-doc (sync existing doc)
 │   ├── status.prompt.md                 ← /status (check current phase)
+│   ├── summarize.prompt.md              ← /summarize (save session context)
 │   └── sync-docs.prompt.md              ← /sync-docs (bulk doc updates)
 ├── workflows/                           ← Specialist workflows
 │   └── acquire-codebase-knowledge.md    ← Factual codebase mapping procedure

@@ -143,6 +143,7 @@ Prompts are reusable, parameterized instructions your team runs as slash command
 ├── generate-api-doc.prompt.md ← /generate-api-doc
 ├── update-api-doc.prompt.md   ← /update-api-doc
 ├── status.prompt.md           ← /status (check progress)
+├── summarize.prompt.md        ← /summarize (save session context)
 └── sync-docs.prompt.md        ← /sync-docs (bulk doc updates)
 ```
 

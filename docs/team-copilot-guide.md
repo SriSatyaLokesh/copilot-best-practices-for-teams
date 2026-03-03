@@ -722,6 +722,7 @@ Select these from the agent dropdown in Copilot Chat:
 | `/generate-api-doc` | No | Documenting new API endpoint |
 | `/update-api-doc` | No | Syncing doc after API changes |
 | `/sync-docs` | No | Bulk doc updates after refactoring |
+| `/summarize` | No | Save session context to Issue doc |
 
 ---
 

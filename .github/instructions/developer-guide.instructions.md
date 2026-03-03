@@ -123,3 +123,4 @@ docs/
 | `/generate-api-doc` | Documenting a new API endpoint | Undocumented API, drift over time |
 | `/update-api-doc` | After changing an existing endpoint | Stale docs cause field name bugs |
 | `/sync-docs` | After bulk changes or refactoring | Docs out of sync, field names wrong |
+| `/summarize` | End of session / before context switch | Lost progress, teammate can't pick up work |
