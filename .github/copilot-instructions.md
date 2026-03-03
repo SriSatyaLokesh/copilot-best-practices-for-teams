@@ -1,8 +1,22 @@
 # [Project Name] — GitHub Copilot Configuration
 
-> For the full team workflow guide, see [docs/team-copilot-guide.md](../docs/team-copilot-guide.md)
+> [!IMPORTANT]
+> **SETUP REQUIRED** — This is a template. Complete these steps before your team starts:
+>
+> 1. **Replace `[Project Name]`** in the heading above with your actual project name
+> 2. **Replace the `Stack:` line** with your actual tech stack
+> 3. **Fill in `## Conventions`** at the bottom with project-specific coding rules
+> 4. **Auto-generate instructions fast**: Type `/init` in Copilot Chat — it analyzes your workspace and generates tailored instructions automatically. Paste the output into the `## Conventions` section.
+> 5. **Add recommended slash commands** (`.vscode/settings.json`):
+>    ```json
+>    "chat.promptFilesRecommendations": {
+>      "start-issue": true,
+>      "debug": true
+>    }
+>    ```
+>    This surfaces `/start-issue` and `/debug` as suggested actions every time chat opens.
 
-> use `/generateInstructions` to generate instructions for your project in copilot chat.
+> For the full team workflow guide, see [docs/team-copilot-guide.md](../docs/team-copilot-guide.md)
 
 ## What This Project Is
 [One sentence: what does this project do?]
@@ -30,5 +44,5 @@ Every work item is an **Issue** going through 5 phases:
 4. After code changes affecting an API → run `/update-api-doc`
 5. After finishing work → update Issue doc progress tracker
 
-## Conventions (fill in per project)
+## Conventions (fill in per project — or run `/init` to auto-generate)
 - [Your project-specific coding rules go here]
