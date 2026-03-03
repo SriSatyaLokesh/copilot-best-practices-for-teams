@@ -31,45 +31,47 @@ This guide shows the **single workflow every developer follows** — beginner or
 Product: "We need to add rate limiting to the login endpoint"
 ```
 
-**Step 1**: Create a branch
+**Step 1**: Open Copilot Chat → run `/start-issue`
 
-```bash
-git checkout -b issue/issue-042-login-rate-limiting
+This is always the first action. Enter the issue description and issue ID when prompted.
+
+`/start-issue` will:
+- Check `.github/copilot-instructions.md` for your **primary branch** (`dev`, `develop`, `main`, etc.)
+- If not set, ask you once: *"What is your team's primary branch?"* and save it permanently
+- Show your current branch and ask: **A) Stay here** or **B) Create fresh branch from primary**
+- If B: pull the latest from primary and create `issue/issue-042-login-rate-limiting`
+- Run `npm test` to confirm baseline is green
+- Create the Issue doc at `docs/issues/issue-042-login-rate-limiting.md`
+- Hand off to the **Discuss** agent
+
+> **Never manually `git checkout -b` before defining requirements.** Let `/start-issue` create the branch — it ensures you're always branching from the freshest version of your primary branch.
+
+**Step 2**: The **Discuss** agent defines requirements
+
 ```
-
-**Step 2**: Open Copilot Chat. Select **"Discuss"** agent.
-
-> If you're starting a new feature, bug, or task, always start with the **Discuss** agent.
-> It helps define the requirements and creates your Issue doc.
-
-**Step 3**: Describe the task
-
-```
-"We need to add rate limiting to the login endpoint. 
+"We need to add rate limiting to the login endpoint.
 Max 5 attempts per 15 minutes per email address."
 ```
 
-**Step 4**: The **Discuss** agent will define the requirements.
+Answer Discuss's focused questions — it takes about 10 minutes to lock in clear, agreed requirements.
 
-The Discuss agent will ask you focused questions. Answer them — it takes about 10 minutes to get clear, agreed requirements.
+**Step 3**: Discuss finishes → **Research** auto-starts
 
-**Step 5**: Discuss finishes → **Research** auto-starts
+Copilot scans the codebase and finds relevant files and existing patterns.
 
-You'll see Copilot scanning the codebase. It will find relevant files and existing patterns.
-
-**Step 6**: Review research findings, click **"Create Plan →"**
+**Step 4**: Review research findings, click **"Create Plan →"**
 
 The Planner creates a task checklist. Review each item — if anything looks wrong or is missing, say so now.
 
-**Step 7**: Approve the plan, click **"Start Implementation (TDD) →"**
+**Step 5**: Approve the plan, click **"Start Implementation (TDD) →"**
 
-The TDD agent takes over. It writes tests first, then implementation, committing as it goes.
+The TDD agent writes tests first, then implementation, committing as it goes.
 
-**Step 8**: Implementation finishes → run `/verify`
+**Step 6**: Implementation finishes → run `/verify`
 
-The Verify agent checks all requirements, tests, and docs. It gives you a pass/fail report.
+The Verify agent checks all requirements, tests, and docs — pass/fail report.
 
-**Step 9**: Fix anything the Verify agent caught, then create the PR.
+**Step 7**: Fix anything caught, then create the PR via `/finish-branch`.
 
 ---
 

@@ -46,19 +46,21 @@ The 5-phase workflow prevents this. Every piece of work — feature, bug fix, im
 
 ### Before Phase 1 — Start Issue (`/start-issue`) — **Always begin here**
 
-**Goal**: Create an isolated branch and verify a clean test baseline before any requirements work.
+**Goal**: Confirm the primary branch, create an isolated workspace, verify a clean test baseline — before any requirements work.
 
 **What it does**:
-1. Checks you are not on `main`/`master`
-2. Pulls latest from `main`
-3. Creates branch: `issue/[issue-id]-[slug]`
+1. **Checks for a stored primary branch** in `.github/copilot-instructions.md`. If missing, asks once: *"What is your team's primary branch?"* (e.g. `dev`, `develop`, `main`) and writes the answer permanently — so future sessions never ask again.
+2. **Shows current branch**, then asks: **A) Stay here** (already on right feature branch) or **B) Create new branch from primary** (for fresh work)
+3. If B: `git checkout <primary> && git pull origin <primary> && git checkout -b issue/[issue-id]-[slug]`
 4. Runs `npm test` — confirms baseline is green before any new work
 5. Creates the Issue doc at `docs/issues/[issue-id]-[slug].md`
 6. Hands off to the **Discuss** agent
 
-> **Why `/start-issue` instead of just selecting the Discuss agent?** `/start-issue` enforces the branch-first rule. Going straight to Discuss means you might discuss and plan on `main`, then forget to branch. `/start-issue` makes the branch the first non-negotiable step.
+> **Why confirm the primary branch instead of hardcoding `main`?** Teams differ — some use `dev`, `develop`, or `staging` as their integration branch. Hardcoding `main` means developers accidentally base feature branches on stale or wrong code. The answer is stored once in `copilot-instructions.md` so the prompt adapts to every team's setup.
 
-**Output**: Feature branch created, Issue doc initialized, Discuss begins
+> **Why A/B choice?** If you're mid-way through a feature and just want to continue, you don't want `/start-issue` forcing a new branch. Option A lets you keep context; Option B is for truly new work.
+
+**Output**: Primary branch confirmed, feature branch ready, Issue doc initialized, Discuss begins
 
 ---
 
@@ -223,7 +225,7 @@ Verdict: ✅ READY FOR PR
 2. Runs TypeScript check (`npx tsc --noEmit`) and lint
 3. Reads the Issue doc to verify all Phase 1 requirements are met
 4. Presents 4 options:
-   - **Merge to main locally** — merge the branch into main now
+   - **Merge to primary locally** — merge the branch into your primary branch (e.g. `dev`)
    - **Push and create a PR** — push branch and open a GitHub PR
    - **Keep as-is** — preserve the branch, handle merging later
    - **Discard** — delete the branch (asks for typed confirmation first)

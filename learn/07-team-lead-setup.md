@@ -47,6 +47,13 @@ Open `.github/copilot-instructions.md` and complete the **SETUP REQUIRED** check
 1. Replace `[Project Name]` in the heading
 2. Replace the `Stack:` line with your actual stack
 3. Fill in `## Conventions` with project-specific rules
+4. **Set your primary branch** — add this line to the `## Conventions` section:
+   ```
+   Primary branch: dev
+   ```
+   Replace `dev` with whatever branch your team cuts feature branches from (`main`, `develop`, `staging`, etc.). This is the line `/start-issue` reads every time a developer starts new work.
+
+> **If you skip Step 4**, each developer will be asked "What is your team's primary branch?" the first time they run `/start-issue` and it will be written automatically. Setting it upfront means no one is ever asked.
 
 **Fastest way for Step 3**: Type `/init` in Copilot Chat — it analyzes your workspace and generates tailored `## Conventions` content automatically.
 
@@ -63,6 +70,10 @@ Stack: [Node.js + TypeScript + Express + PostgreSQL | Next.js + Prisma | etc.]
 - [API Architecture](../learn/03-api-architecture.md)
 - [External APIs](../docs/external-apis/)
 - [Active Issues](../docs/issues/)
+
+## Conventions
+Primary branch: dev
+[Other project-specific coding rules here]
 ```
 
 ### Step 3: Customize the instructions (1 hour)
@@ -150,9 +161,9 @@ Create or update `.vscode/settings.json` in the project:
 
 Run a 30-minute session covering:
 1. Read `learn/00-introduction.md` together
-2. Demo: start a new Issue using `/start-issue` — show how it creates the branch *before* anything else
+2. Demo: start a new Issue using `/start-issue` — show how it reads the primary branch from `copilot-instructions.md` and offers to create a fresh branch or stay on the current one
 3. Show where docs live and how to find the right template
-4. Explain the one rule: **always read the Issue doc when resuming work**
+4. Explain the two rules: **always run `/start-issue` first** and **always read the Issue doc when resuming work**
 5. Show the `argument-hint` in action — when selecting an agent in chat, Copilot shows placeholder text for what to type
 
 ---
@@ -191,6 +202,7 @@ The most common problems and fixes:
 | Agent giving wrong field names | External API doc not filled in | Document the entity in `docs/external-apis/` |
 | Context lost between sessions | Developer not reading issue doc | Make it a team habit: every session starts with "Read #docs/issues/..." |
 | Sessions not auto-committing | Hook not installed or not on default branch | Check `.github/hooks/` is committed to main |
+| `/start-issue` keeps asking for primary branch | `Primary branch:` line missing from `copilot-instructions.md` | Add `Primary branch: dev` (or your branch) to the `## Conventions` section |
 
 ---
 

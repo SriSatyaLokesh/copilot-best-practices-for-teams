@@ -29,7 +29,10 @@ Stack: [e.g., Node.js + Express + PostgreSQL + Redis]
 
 ## Our Issue Workflow
 Every work item is an **Issue** going through 5 phases:
-`/discuss` → `/research` → `/plan` → `/execute` → `/verify`
+`/start-issue` → `/discuss` + `/research` → `/plan` → `/execute` → `/verify`
+
+- `/start-issue` confirms your **primary branch**, offers to stay on the current branch or create a fresh branch from the latest primary, then hands off to `/discuss`.
+- All feature branches are cut from the **primary branch** (never directly from `main` unless `main` IS the primary branch).
 
 ## Where to Find Things
 - **Flow docs**: `docs/flows/[flow-name]-flow.md`
@@ -46,3 +49,6 @@ Every work item is an **Issue** going through 5 phases:
 
 ## Conventions (fill in per project — or run `/init` to auto-generate)
 - [Your project-specific coding rules go here]
+
+<!-- PRIMARY BRANCH CONFIG — auto-written by /start-issue on first run -->
+<!-- Primary branch: (not set — run /start-issue and Copilot will ask you) -->
