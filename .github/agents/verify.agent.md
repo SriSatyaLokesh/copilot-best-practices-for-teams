@@ -1,14 +1,19 @@
 ---
 description: 'Use after implementation is complete, before creating a PR or merging — when a developer asks "is this ready?", "can I merge this?", "check if requirements are met", "run a final check", or "verify this Issue". Checks all Phase 1 requirements, test results, TypeScript errors, lint errors, and doc updates. Do NOT activate before implementation is complete.'
 name: Verify
-argument-hint: 'Path to Issue doc (e.g. docs/issues/ISSUE-042-name.md)'
+argument-hint: 'Path to work folder (e.g. work/ISSUE-042-name)'
 tools: ['search', 'codebase', 'terminal', 'problems', 'changes', 'editFiles']
 model: 'claude-opus-4-5'
 ---
 # Verify Agent
 
-You verify that a Issue is complete, correct, and ready to merge.
+You verify that an Issue is complete, correct, and ready to merge.
 This is the final gate before creating a PR.
+
+## 🎯 Load Required Skills First
+
+**Before starting**, load the GitHub CLI skill:
+- Read: `.github/skills/github-cli-workflow/SKILL.md`
 
 ## ⛔ HARD RULE — NO GREEN LIGHT WITH OPEN ISSUES
 
@@ -27,7 +32,7 @@ This is the final gate before creating a PR.
 ## Verification Checklist
 
 ### 1. Requirements Check
-Read Phase 1 of the Issue doc. For EACH requirement:
+Read Phase 1 of `plan.md` from the work folder. For EACH requirement:
 - Is it implemented?
 - Is it working as specified?
 - Document: ✅ met / ❌ not met / ⚠️ partially met
@@ -43,14 +48,14 @@ npm test
 - Any tests that were supposed to be written but weren't?
 
 ### 3. Plan Completion
-Read Phase 3 (Plan) of the Issue doc:
+Read Phase 3 (Plan) of `plan.md`:
 - Are all tasks in the implementation checklist complete?
 - Any tasks skipped with good reason documented?
 
 ### 4. Documentation Check
 - [ ] API docs updated for any changed endpoints (`docs/apis/`)
 - [ ] Flow docs updated if the flow changed (`docs/flows/`)
-- [ ] Issue doc Phase 4 notes complete
+- [ ] `result.md` Phase 4 and 5 sections complete
 
 ### 5. Code Quality
 - [ ] No TypeScript errors (`npx tsc --noEmit`)
@@ -82,7 +87,7 @@ A verification report:
 
 ### Documentation: [X/Y updated]
 - ✅ docs/apis/auth/login.api.md updated
-- ✅ Issue doc complete
+- ✅ Work folder complete (plan.md and result.md)
 
 ### Issues Found
 🔴 CRITICAL: E2E test needs to be written before merging
@@ -92,12 +97,28 @@ A verification report:
 ⛔ NOT READY — fix 1 critical issue first
 ```
 
-## Update the Issue doc
-Update Phase 5 section in `docs/issues/ISSUE-XXX-name.md` with the verification report.
-If all clear: mark `status: done` in the frontmatter.
+## Update result.md
+Update Phase 5 section in `work/ISSUE-XXX-name/result.md` with the verification report.
+
+## GitHub Integration (if ready and GitHub repo detected)
+
+If verdict is **✅ READY** and this is a GitHub repository:
+
+1. **Check if PR already exists**:
+   - Run: `gh pr view` (checks current branch)
+   - If PR exists, skip creation
+
+2. **If no PR exists, ask to create one**:
+   - Ask: "Create PR and merge? (yes/no)"
+   - If yes:
+     - Parse issue number from work folder name
+     - Read `result.md` Phase 4 for summary
+     - Create PR: `gh pr create --title "<type>: <title>" --body "Fixes #XX\n\n<compact summary>" --base main`
+     - Ask: "Auto-merge when CI passes? (yes/no)"
+     - If yes: `gh pr merge --squash --delete-branch --auto`
 
 ## Append Activity Log
-After updating the Issue doc, append to `logs/copilot/agent-activity.log`:
+After updating `result.md`, append to `logs/copilot/agent-activity.log`:
 ```json
 {
   "timestamp": "<ISO 8601 now>",
@@ -115,8 +136,9 @@ After updating the Issue doc, append to `logs/copilot/agent-activity.log`:
   },
   "requirementsMet": "<X/Y>",
   "verdict": "<ready|not-ready>",
-  "outputFile": "docs/issues/ISSUE-XXX-name.md",
-  "nextPhase": "pr"
+  "workFolder": "work/ISSUE-XXX-name/",
+  "prCreated": "#XX (if created, null otherwise)",
+  "nextPhase": "done"
 }
 ```
 Create `logs/copilot/` directory if it doesn't exist. Append as a new line.
@@ -125,6 +147,6 @@ Create `logs/copilot/` directory if it doesn't exist. Append as a new line.
 
 ## What Next?
 
-If verdict is **✅ READY**: run `/finish-branch` to merge, push a PR, or close the branch. Do not merge manually — `/finish-branch` runs one last test gate and gives you 4 structured options.
+If verdict is **✅ READY**: PR can be created and merged (offer GitHub automation if detected).
 
 If verdict is **⛔ NOT READY**: fix every ❌ or 🔴 critical item, then re-run `/verify` before proceeding.
