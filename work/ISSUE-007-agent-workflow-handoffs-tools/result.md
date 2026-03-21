@@ -95,17 +95,17 @@ No automated end-to-end harness exists for custom agent UI workflows in this rep
 ## 🚀 Deployment / Merge Information
 
 ### PR Details
-- **PR Number**: Pending
-- **PR Title**: Pending
-- **PR URL**: Pending
-- **Created**: Pending
+- **PR Number**: #8
+- **PR Title**: fix: finish workflow agent update
+- **PR URL**: https://github.com/SriSatyaLokesh/copilot-team-workflow/pull/8
+- **Created**: 2026-03-21
 - **Merged**: Not merged
 - **Merged By**: Pending
 
 ### GitHub Issue
 - **Issue Number**: #7
-- **Issue URL**: Pending GitHub URL
-- **Status**: Open until PR is created/merged
+- **Issue URL**: https://github.com/SriSatyaLokesh/copilot-team-workflow/issues/7
+- **Status**: Linked to PR #8
 
 ### Merge Commit
 ```
@@ -148,4 +148,4 @@ Pending PR / merge
 ---
 
 **Status**: ✅ Complete and Verified  
-**Closed**: Pending PR / merge
+**Closed**: Pending merge of PR #8
